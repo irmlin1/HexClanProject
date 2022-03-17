@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using HexClanApplication.Api.Database;
+using HexClanApplication.Api.Models;
 
 namespace HexClanApplication.Api.Controllers
 {
@@ -19,7 +19,7 @@ namespace HexClanApplication.Api.Controllers
         public UsersController(IMongoClient client)
         {
             var database = client.GetDatabase("HexClanDatabase");
-            _userModelsCollection = database.GetCollection<UsersModel>("UsersDB");
+            _userModelsCollection = database.GetCollection<UsersModel>("Users");
         }
 
         [HttpGet]

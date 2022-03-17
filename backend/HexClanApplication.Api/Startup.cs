@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using HexClanApplication.Api.Database;
+using HexClanApplication.Api.Models;
 using HexClanApplication.Api.Controllers;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
