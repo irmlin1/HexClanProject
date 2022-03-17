@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\irman\\source\\repos\\HexClanApplication\\Backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectUniqueName": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "projectName": "HexClanApplication.Api",
-      "projectPath": "C:\\Users\\irman\\source\\repos\\HexClanApplication\\Backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "packagesPath": "C:\\Users\\irman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\irman\\source\\repos\\HexClanApplication\\Backend\\HexClanApplication.Api\\obj\\",
+      "outputPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

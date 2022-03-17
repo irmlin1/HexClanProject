@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\irman\\source\\repos\\HexClanApplication\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj": {}
+    "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\irman\\source\\repos\\HexClanApplication\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj": {
+    "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\irman\\source\\repos\\HexClanApplication\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+        "projectUniqueName": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
         "projectName": "HexClanApplication.Api",
-        "projectPath": "C:\\Users\\irman\\source\\repos\\HexClanApplication\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+        "projectPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
         "packagesPath": "C:\\Users\\irman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\irman\\source\\repos\\HexClanApplication\\backend\\HexClanApplication.Api\\obj\\",
+        "outputPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
