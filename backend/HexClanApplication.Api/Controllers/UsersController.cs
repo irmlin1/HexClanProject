@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
+using MongoDB.Bson;
 using HexClanApplication.Api.Database;
 
 namespace HexClanApplication.Api.Controllers
@@ -34,8 +35,6 @@ namespace HexClanApplication.Api.Controllers
             user = _userModelsCollection.Find<UsersModel>(us => us.email == usr.email).FirstOrDefault();
             if(user == null)
             {
-                int kiekis = _userModelsCollection.AsQueryable().Count();
-                usr.Id = kiekis + 1;
                 _userModelsCollection.InsertOne(usr);
                 return new JsonResult("Added successfully (Kol sutvarkiau gavau traumą...)");
             }
@@ -49,13 +48,13 @@ namespace HexClanApplication.Api.Controllers
         
         // Delete metode tiesiog prie viso api pridėkite id skaičiuką ir ištrins jį.
         [HttpDelete("{Id}")]
-        public JsonResult Delete(int Id)
+        public JsonResult Delete(String Id)
         {
             UsersModel user;
-            user = _userModelsCollection.Find<UsersModel>(us => us.Id == Id).FirstOrDefault();
+            user = _userModelsCollection.Find<UsersModel>(us => us.UserId == Id).FirstOrDefault();
             if(user != null)
             {
-                _userModelsCollection.DeleteOne(a => a.Id == Id);
+                _userModelsCollection.DeleteOne(a => a.UserId == Id);
                 return new JsonResult("Asmuo ištrintas");
             }
             else

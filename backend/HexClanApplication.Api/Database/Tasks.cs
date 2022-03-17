@@ -3,11 +3,11 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace HexClanApplication.Api.Database
 {
-    public class TaskModel
+    public class TasksModel
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int UserId { get; set; }
+        public string TaskId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int Difficulty { get; set; }

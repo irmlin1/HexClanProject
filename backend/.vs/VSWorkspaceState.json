@@ -5,6 +5,6 @@
     "\\HexClanApplication.Api\\Controllers",
     "\\HexClanApplication.Api\\Database"
   ],
-  "SelectedNode": "\\HexClanApplication.sln",
+  "SelectedNode": "\\HexClanApplication.Api\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }
