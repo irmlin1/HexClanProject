@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c21284f-3dab-4211-8201-851badfcacb2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.runtimeconfig.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/HexClanApplication.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/HexClanApplication.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/ref/HexClanApplication.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/ref/HexClanApplication.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RichTextEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RichTextEditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/About.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +55,7 @@
       <updated>1647175202109</updated>
       <workItem from="1647175204705" duration="383000" />
       <workItem from="1647175801690" duration="360000" />
-      <workItem from="1647593203709" duration="3188000" />
+      <workItem from="1647593203709" duration="11699000" />
     </task>
     <servers />
   </component>
