@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {Editor, EditorState, RichUtils} from "draft-js";
-import {Box, Button} from "@mui/material";
+import {Box, Button} from "@mui/material"
+import "../Styles/About.css"
+import EditIcon from "@mui/icons-material/Edit";
 
 
 export default function RichTextEditor(props) {
-    const { readOnly, content, setContent, handleButtonClick } = props;
+    const { readOnly, content, setContent, editingMode, setEditingMode, handleButtonClick } = props;
     const editor = React.useRef(null);
 
     const [editorState, setEditorState] = useState(() =>
@@ -46,27 +48,37 @@ export default function RichTextEditor(props) {
         return 'not-handled';
     }
 
+    const handleModeButtonClick = () => {
+        setEditingMode(true);
+    }
+
     return (
-        <div
-            style={{ border: "1px solid black", minHeight: "6em", cursor: "text" }}
-            onClick={focusEditor}
-        >
-            <button onMouseDown={onUnderlineClick}>U</button>
-            <button onMouseDown={onBoldClick}><b>B</b></button>
-            <button onMouseDown={onItalicClick}><em>I</em></button>
-            <Editor
-                ref={editor}
-                editorState={editorState}
-                handleKeyCommand={command => handleKeyCommand(command)}
-                onChange={newState => handleChange(newState)}
-                placeholder="Write something!"
-                readOnly={readOnly}
-            />
-            <Button
-                onClick={handleButtonClick}
+        <div>
+            <div className={"toolbar"}>
+                <div hidden={readOnly}>
+                    <div hidden={!editingMode}>
+                        <Button variant={"contained"} sx={{mr:0.3}} onMouseDown={onBoldClick}><b>BOLD</b></Button>
+                        <Button variant={"contained"} sx={{mr:0.3}} onMouseDown={onItalicClick}><em>ITALIC</em></Button>
+                        <Button variant={"contained"} sx={{mr:0.3}} onMouseDown={onUnderlineClick}><u>UNDERLINE</u></Button>
+                        <Button variant={"contained"} onClick={handleButtonClick}>SAVE</Button>
+                    </div>
+                    <div hidden={editingMode}>
+                        <Button startIcon={<EditIcon/>} variant={"contained"} onClick={handleModeButtonClick}/>
+                    </div>
+                </div>
+            </div>
+            <div
+                className={"About"}
+                onClick={focusEditor}
             >
-                Save
-            </Button>
+                <Editor
+                    ref={editor}
+                    editorState={editorState}
+                    handleKeyCommand={command => handleKeyCommand(command)}
+                    onChange={newState => handleChange(newState)}
+                    readOnly={!editingMode}
+                />
+            </div>
         </div>
     );
 }

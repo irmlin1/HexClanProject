@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace HexClanApplication.Api.Models
+namespace HexClanApplication.Api.Contracts.Models
 {
     public class AboutContent
     {

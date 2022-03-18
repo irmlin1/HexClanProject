@@ -11,10 +11,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using HexClanApplication.Api.Models;
+using HexClanApplication.Api.Contracts.Models;
 using HexClanApplication.Api.Controllers;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
+using HexClanApplication.Api.Services;
+using HexClanApplication.Api.Contracts.Services;
 
 namespace HexClanApplication.Api
 {
@@ -38,6 +40,7 @@ namespace HexClanApplication.Api
                 return new MongoClient(url);
             });
 
+            services.AddScoped<IAboutContentService, AboutContentService>();
 
             //Enable CORS
             services.AddCors(c =>

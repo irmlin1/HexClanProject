@@ -11,6 +11,7 @@ export default function About() {
     const [snackOpen, setSnackOpen] = useState(false);
     const [snackText, setSnackText] = useState("");
     const [snackColor, setSnackColor] = useState("success");
+    const [editingMode, setEditingMode] = useState(false);
 
     // Allow to edit text only for admins/mods, for users - readonly mode
     const isAdmin = true;
@@ -22,7 +23,7 @@ export default function About() {
     // method for retrieving initial content from database
     const fetchContent = async () => {
         const response = await getAboutContent();
-        if(response.status == 200) {   //&& response.data.success
+        if(response.status === 200) {   //&& response.data.success
             const content = convertFromRaw(JSON.parse(response.data.content))
             setContent(EditorState.createWithContent(content))
         }
@@ -44,22 +45,22 @@ export default function About() {
 
         // send updated content to the server
         const response = await updateAboutContent(convertToRaw(content.getCurrentContent()))
-        console.log(response)
 
-        // if (response) {
-        //     if (response.data.success) {
-        //         setSnackText("Updated successfully!");
-        //         setSnackColor("success");
-        //         setSnackOpen(true);
-        //     } else {
-        //         setSnackColor("error");
-        //         setSnackText("Update failed")
-        //         // setAlertText(response.data["cause"]); console.log(response.error?)
-        //     }
-        // } else {
-        //     setSnackColor("error");
-        //     setSnackText("A server error has occurred.");
-        // }
+        if (response) {
+            if (response.status === 200) {
+                setSnackText("Updated successfully!");
+                setSnackColor("success");
+                setSnackOpen(true);
+                setEditingMode(false);
+            } else {
+                setSnackColor("error");
+                setSnackText("Update failed")
+                console.log(response)
+            }
+        } else {
+            setSnackColor("error");
+            setSnackText("A server error has occurred.");
+        }
     };
 
     return (
@@ -72,17 +73,21 @@ export default function About() {
             >
                 <Alert
                     onClose={snackOnClose}
-                    severity={"success"}
+                    severity={snackColor}
                     sx={{ width: "100%" }}
                 >
                     {snackText}
                 </Alert>
             </Snackbar>
 
+            <h1>About us</h1>
+
             <RichTextEditor
                 readOnly={!isAdmin}
                 content={content}
                 setContent={setContent}
+                editingMode={editingMode}
+                setEditingMode={setEditingMode}
                 handleButtonClick={handleButtonClick}
             />
         </Box>
