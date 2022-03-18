@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\HexClanApplication.Api",
+    "\\HexClanApplication.Api\\Controllers",
+    "\\HexClanApplication.Api\\Database"
+  ],
+  "SelectedNode": "\\HexClanApplication.Api\\Startup.cs",
+  "PreviewInSolutionExplorer": false
+}
