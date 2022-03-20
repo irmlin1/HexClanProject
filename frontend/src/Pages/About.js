@@ -80,7 +80,9 @@ export default function About() {
                 </Alert>
             </Snackbar>
 
-            <h1>About us</h1>
+            <div className={"header-style"}>
+                <h1>About us</h1>
+            </div>
 
             <RichTextEditor
                 readOnly={!isAdmin}

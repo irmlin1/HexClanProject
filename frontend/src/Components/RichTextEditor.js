@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Editor, EditorState, RichUtils} from "draft-js";
+import SelectionState, {Editor, EditorState, RichUtils} from "draft-js";
 import {Box, Button} from "@mui/material"
 import "../Styles/About.css"
 import EditIcon from "@mui/icons-material/Edit";
@@ -18,7 +18,9 @@ export default function RichTextEditor(props) {
     }, [content])
 
     function focusEditor() {
-        editor.current.focus();
+        const state = EditorState.moveSelectionToEnd(editorState);
+        const newState = EditorState.forceSelection(state, state.getSelection());
+        setEditorState(newState);
     }
 
     const handleChange = (newState) => {
@@ -50,27 +52,25 @@ export default function RichTextEditor(props) {
 
     const handleModeButtonClick = () => {
         setEditingMode(true);
+        focusEditor();
     }
 
     return (
         <div>
             <div className={"toolbar"}>
-                <div hidden={readOnly}>
-                    <div hidden={!editingMode}>
+                <div hidden={readOnly} className={"div-flex"}>
+                    <div className={`${!editingMode ? "div-display-left" : ""}`}>
                         <Button variant={"contained"} sx={{mr:0.3}} onMouseDown={onBoldClick}><b>BOLD</b></Button>
                         <Button variant={"contained"} sx={{mr:0.3}} onMouseDown={onItalicClick}><em>ITALIC</em></Button>
                         <Button variant={"contained"} sx={{mr:0.3}} onMouseDown={onUnderlineClick}><u>UNDERLINE</u></Button>
                         <Button variant={"contained"} onClick={handleButtonClick}>SAVE</Button>
                     </div>
-                    <div hidden={editingMode}>
-                        <Button startIcon={<EditIcon/>} variant={"contained"} onClick={handleModeButtonClick}/>
+                    <div className={"div-display-right"}>
+                        <Button disabled={editingMode} startIcon={<EditIcon/>} variant={"contained"} onClick={handleModeButtonClick}/>
                     </div>
                 </div>
             </div>
-            <div
-                className={"About"}
-                onClick={focusEditor}
-            >
+            <div>
                 <Editor
                     ref={editor}
                     editorState={editorState}

@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c21284f-3dab-4211-8201-851badfcacb2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../backend/.vs/HexClanApplication/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.vs/HexClanApplication/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/.vs/HexClanApplication/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.vs/HexClanApplication/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Controllers/AboutContentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Controllers/AboutContentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Controllers/TasksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Controllers/TasksController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Models/AboutContent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Models/Tasks.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Models/Users.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/HexClanApplication.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/HexClanApplication.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/HexClanApplication.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/HexClanApplication.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/HexClanApplication.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/HexClanApplication.Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/ref/HexClanApplication.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/ref/HexClanApplication.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/refint/HexClanApplication.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/obj/Debug/net5.0/refint/HexClanApplication.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/RichTextEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RichTextEditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/About.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Styles/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Styles/About.css" afterDir="false" />
@@ -67,6 +50,7 @@
       <workItem from="1647175204705" duration="383000" />
       <workItem from="1647175801690" duration="360000" />
       <workItem from="1647593203709" duration="19324000" />
+      <workItem from="1647767002410" duration="5127000" />
     </task>
     <servers />
   </component>
