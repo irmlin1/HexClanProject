@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using HexClanApplication.Api.Models;
+using HexClanApplication.Api.Contracts.Models;
 
 namespace HexClanApplication.Api.Controllers
 {
