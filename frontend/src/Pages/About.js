@@ -4,6 +4,7 @@ import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draf
 import RichTextEditor from "../Components/RichTextEditor";
 import '../Styles/About.css';
 import {getAboutContent, updateAboutContent} from "../Services/AboutService";
+import NavigationBar from "../Components/NavigationBar";
 
 export default function About() {
 
@@ -65,6 +66,7 @@ export default function About() {
 
     return (
         <Box>
+            <NavigationBar/>
             <Snackbar
                 anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
                 open={snackOpen}
