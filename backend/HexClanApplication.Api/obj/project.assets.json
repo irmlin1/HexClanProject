@@ -837,19 +837,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\super\\.nuget\\packages\\": {}
+    "C:\\Users\\drebu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClan\\.git\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectUniqueName": "C:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "projectName": "HexClanApplication.Api",
-      "projectPath": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClan\\.git\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
-      "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClan\\.git\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
+      "projectPath": "C:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "packagesPath": "C:\\Users\\drebu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\drebu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -902,7 +902,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   }
