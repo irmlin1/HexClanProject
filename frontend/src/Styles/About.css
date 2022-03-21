@@ -33,6 +33,6 @@ div.DraftEditor-root {
 }
 
 .div-flex {
-    display: flex;
+    display: flex-end;
     justify-content: space-between;
 }

@@ -1,11 +1,5 @@
-h1{
+.mainBody{
+    text-align: left;
     padding-top: 2%;
-    padding-left: 5%;
-    padding-right: 80%;
-    float: left;
-}
-h2{
-    padding-left: 5%;
-    padding-right: 50%;
-    float: left;
+    padding-left: 5%;;
 }

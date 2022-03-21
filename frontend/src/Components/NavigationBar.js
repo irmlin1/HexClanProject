@@ -45,7 +45,6 @@ return (
 const navBtn={
     height: '40px',
     width: '8%',
-    float: 'left',
     marginTop: '20px',
     marginLeft: '2%',
     color: 'black',

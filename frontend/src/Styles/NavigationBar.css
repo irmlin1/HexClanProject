@@ -2,4 +2,30 @@ div.body {
     background-color: gray;
     width: 100%;
     height:80px;
+    text-align: left;
+}
+
+.navBtn{
+    height: 40px;
+    width: 8%;
+    margin-Top: 20px;
+    margin-Left: 2%;
+    color: black;
+    padding:5px;
+    font-Weight: bold;
+}
+
+.imageS{
+    height: 60px;
+}
+
+.profileBtn{
+    height: 40px;
+    width: 8%;
+    margin-Top: 20px;
+    margin-Right: 5%;
+    float: right;
+    color: black;
+    padding: 5px;
+    font-Weight: bold;
 }
