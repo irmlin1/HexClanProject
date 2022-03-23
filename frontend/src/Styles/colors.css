@@ -1,0 +1,48 @@
+/*
+  r - red
+  g - green
+  b - blue
+  a - opacity
+
+  ----------------
+
+  : # xx xx xx xx
+       rr gg bb aa
+
+  -------OR-------
+
+  : rgba(r, g, b, a)
+*/
+
+/*
+  Usage V
+  color: var(--red-1);
+  background-color: var(--white-1-dd);
+*/
+
+
+/*
+ TODO: Add more colors which are necessary and remove the unused ones :TODO
+*/
+:root {
+  --white-1: #ffffffff;
+  --white-1-dd: #ffffffdd;
+  --white-1-bb: #ffffffbb;
+  --white-1-99: #ffffff99;
+
+  --grey-1: #8d8d8dff;
+  --grey-1-dd: #8d8d8ddd;
+  --grey-1-bb: #8d8d8dbb;
+  --grey-1-99: #8d8d8d99;
+
+  --black-1: #000000ff;
+  --black-1-dd: #000000dd;
+  --black-1-bb: #000000bb;
+  --black-1-99: #00000099;
+
+  --red-1: #f34848;
+  
+  --green-1: #73f767;
+
+  --blue-1: #4d5efa;
+}
