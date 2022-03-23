@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using HexClanApplication.Api.Database;
+using HexClanApplication.Api.Contracts.Models;
 
 namespace HexClanApplication.Api.Controllers
 {
@@ -18,7 +18,7 @@ namespace HexClanApplication.Api.Controllers
         public TasksController(IMongoClient client)
         {
             var database = client.GetDatabase("HexClanDatabase");
-            _taskModelsCollection = database.GetCollection<TasksModel>("TasksDB");
+            _taskModelsCollection = database.GetCollection<TasksModel>("Tasks");
         }
 
         [HttpGet]
