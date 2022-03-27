@@ -40,6 +40,10 @@ namespace HexClanApplication.Api
                 return new MongoClient(url);
             });
 
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddMongoDbStores<ApplicationUser, ApplicationRole, Guid> (
+                Configuration.GetSection("MongoUrl").Value, "HexClan" );
+
             services.AddScoped<IAboutContentService, AboutContentService>();
 
             //Enable CORS

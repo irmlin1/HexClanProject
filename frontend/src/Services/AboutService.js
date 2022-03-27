@@ -1,4 +1,4 @@
-//Service file for handling project related HTTP requests
+//Service file for handling about-page related HTTP requests
 
 import AxiosInstance from "../httpClient"
 

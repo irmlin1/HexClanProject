@@ -45,7 +45,6 @@ export default function Register() {
     // passwords must match,
     // required fields cannot be empty
     useEffect(() => {
-
         setButtonDisabled(!password ||
             !passwordConfirm ||
             !email ||
@@ -73,13 +72,6 @@ export default function Register() {
         };
         event.preventDefault();
 
-        // Later, implement this logic:
-        // sent register details to the server.
-        // If user exists, show error message,
-        // otherwise, send confirmation email.
-        // In the email, the user will find confirmation link
-        // or verification code. Once verified, redirect user to
-        // login page.
         setSnackOpen(true);
         setSnackText(`Verifying... / Confirmation email sent to ${email} (not implemented)`)
     };
