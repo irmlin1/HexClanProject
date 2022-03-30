@@ -7,5 +7,6 @@ namespace HexClanApplication.Api.Contracts.Models
     [CollectionName("Roles")]
     public class ApplicationRole:MongoIdentityRole<Guid>
     {
+        
     }
 }

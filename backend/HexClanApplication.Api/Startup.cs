@@ -17,6 +17,7 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
 using HexClanApplication.Api.Services;
 using HexClanApplication.Api.Contracts.Services;
+using HexClanApplication.Api.Settings;
 
 namespace HexClanApplication.Api
 {
@@ -40,11 +41,14 @@ namespace HexClanApplication.Api
                 return new MongoClient(url);
             });
 
+            var mongoDbSettings = Configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
+
             services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddMongoDbStores<ApplicationUser, ApplicationRole, Guid> (
-                Configuration.GetSection("MongoUrl").Value, "HexClan" );
+                mongoDbSettings.ConnectionString, mongoDbSettings.Name);
 
             services.AddScoped<IAboutContentService, AboutContentService>();
+            services.AddScoped<IUserService, UserService>();
 
             //Enable CORS
             services.AddCors(c =>

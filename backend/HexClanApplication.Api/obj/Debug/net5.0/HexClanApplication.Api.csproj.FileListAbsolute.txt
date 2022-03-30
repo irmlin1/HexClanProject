@@ -42,3 +42,5 @@ C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija
 C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.pdb
 C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.genruntimeconfig.cache
 C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\ref\HexClanApplication.Api.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\AspNetCore.Identity.MongoDbCore.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDbGenericRepository.dll
