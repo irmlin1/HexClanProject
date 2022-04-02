@@ -4,10 +4,6 @@ import AxiosInstance from "../httpClient"
 
 export const updateAboutContent = async (content) => {
     try {
-        console.log("siunciu: ", JSON.stringify(content))
-        console.log(typeof JSON.stringify(content))
-        console.log(content)
-
         return await AxiosInstance.post("/about", {
             content: JSON.stringify(content)
         });

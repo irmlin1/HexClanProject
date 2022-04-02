@@ -6,7 +6,9 @@ namespace HexClanApplication.Api.Contracts.Services
 {
     public interface IUserService
     {
-        Task<RegisterStateModel> RegisterAsync(User user);
+        Task<ResponseState> RegisterAsync(UserDto user);
+        Task<ResponseState> CreateRoleAsync(UserRoleDto role);
         JsonResult GetUsers();
+        Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model);
     }
 }

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Alert, Box, Button, Container, CssBaseline, Snackbar, TextField} from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import {getAboutContent} from "../Services/AboutService";
+import {registerNewUser} from "../Services/UserService";
 
 const theme = createTheme();
 
@@ -9,12 +11,14 @@ export default function Register() {
     const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
     const [buttonDisabled, setButtonDisabled] = useState(false);
     const [passwordHelperText, setPasswordHelperText] = useState("");
     const [passwordError, setPasswordError] = useState(false);
     const [snackOpen, setSnackOpen] = useState(false);
+    const [snackColor, setSnackColor] = useState("success");
     const [snackText, setSnackText] = useState("");
 
     const handleEmailChange = (event) => {
@@ -27,6 +31,10 @@ export default function Register() {
 
     const handleLastNameChange = (event) => {
         setLastName(event.target.value);
+    };
+
+    const handleUserNameChange = (event) => {
+        setUserName(event.target.value);
     };
 
     const handlePasswordChange = (event) => {
@@ -50,6 +58,7 @@ export default function Register() {
             !email ||
             !firstName ||
             !lastName ||
+            !userName ||
             password !== passwordConfirm
         )
 
@@ -61,19 +70,40 @@ export default function Register() {
             setPasswordError(false);
         }
 
-    }, [password, passwordConfirm, firstName, lastName, email])
+    }, [password, passwordConfirm, firstName, lastName, userName, email])
 
     const handleSubmit = async (event) => {
-        const values = {
+        const user = {
             firstName: firstName,
             lastName: lastName,
+            userName: userName,
             email: email,
             password: password
         };
+
         event.preventDefault();
 
+        const response = await registerNewUser(user);
         setSnackOpen(true);
-        setSnackText(`Verifying... / Confirmation email sent to ${email} (not implemented)`)
+        console.log(response.data)
+        console.log(response.data.Success)
+        if(response) {
+            if(response.data.Success) {
+                setSnackText(response.data.Message)
+                setSnackColor("success")
+            } else {
+                setSnackColor("error")
+
+                if(response.data.Message) {
+                    setSnackText(response.data.Message);
+                } else if (response.data.Content) {
+                    setSnackText(response.data.Content[0].Description);
+                }
+            }
+        } else {
+            setSnackColor("error");
+            setSnackText("A server error has occurred.");
+        }
     };
 
     return (
@@ -96,7 +126,7 @@ export default function Register() {
                     >
                         <Alert
                             onClose={snackOnClose}
-                            severity={"success"}
+                            severity={snackColor}
                             sx={{ width: "100%" }}
                         >
                             {snackText}
@@ -126,7 +156,6 @@ export default function Register() {
                             fullWidth
                             name="firstName"
                             label="First Name"
-                            type="firstName"
                             id="firstName"
                             onChange={handleFirstNameChange}
                             value={firstName}
@@ -146,9 +175,18 @@ export default function Register() {
                             margin="normal"
                             required
                             fullWidth
+                            name="userName"
+                            label="User Name"
+                            id="userName"
+                            onChange={handleUserNameChange}
+                            value={userName}
+                        />
+                        <TextField
+                            margin="normal"
+                            required
+                            fullWidth
                             name="password"
                             label="Password"
-                            type="password"
                             id="password"
                             onChange={handlePasswordChange}
                             value={password}

@@ -1,7 +1,12 @@
-﻿namespace HexClanApplication.Api.Contracts.Models
+﻿using AspNetCore.Identity.MongoDbCore.Models;
+using MongoDbGenericRepository.Attributes;
+using System;
+
+namespace HexClanApplication.Api.Contracts.Models
 {
-    public class UserRole
+    [CollectionName("Roles")]
+    public class UserRole:MongoIdentityRole<Guid>
     {
-        public string RoleName { get; set; }
+        
     }
 }

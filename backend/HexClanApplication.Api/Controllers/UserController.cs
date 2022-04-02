@@ -22,36 +22,52 @@ namespace HexClanApplication.Api.Controllers
 
         public UserController(IUserService userService)
         {
-            this._userService = userService;
+            _userService = userService;
         }
 
-        [HttpPost]
-        public async Task<ActionResult> RegisterAsync(User user)
+        [HttpPost("register")]
+        public async Task<ActionResult> RegisterAsync(UserDto user)
         {
+            
             if (user == null)
+            {
+                return BadRequest();
+            }
+
+            var result = await _userService.RegisterAsync(user);
+
+            return result.Success ? Ok(result) : Conflict(result);
+        }
+
+        [HttpPost("role")]
+        public async Task<ActionResult> CreateRoleAsync(UserRoleDto role)
+        {
+            if (role == null)
+            {
+                return BadRequest();
+            }
+
+            var result = await _userService.CreateRoleAsync(role);
+
+            return result.Success ? Ok(result) : Conflict(result);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> GetTokenAsync(TokenRequestModel model)
+        {
+            if (model == null)
             {
                 return BadRequest();
             }
 
             try
             {
-                if(user.email.Where(c => c == '@').Count() != 1)
-                {
-                    return BadRequest();
-                }
-
-                var result = await _userService.RegisterAsync(user);
-
-                if(result.AccountCreated)
-                {
-                    return Ok(result);
-                }
-
-                return Conflict(result);
+                var result = await _userService.GetTokenAsync(model);
+                return Ok(result);
             }
-            catch(Exception ex)
+            catch (ArgumentNullException)
             {
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
 

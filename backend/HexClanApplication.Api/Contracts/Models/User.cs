@@ -1,20 +1,17 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System.ComponentModel.DataAnnotations;
+﻿using AspNetCore.Identity.MongoDbCore.Models;
+using Microsoft.AspNetCore.Identity;
+using MongoDbGenericRepository.Attributes;
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace HexClanApplication.Api.Contracts.Models
 {
-    public class User
+    [CollectionName("Users")]
+    public class User : MongoIdentityUser<Guid>
     {
-        [Required]
         public string firstName { get; set; }
-        [Required]
         public string lastName { get; set; }
-        [Required]
-        public string userName { get; set; }
-        [Required]
-        public string email { get; set; }
-        [Required]
-        public string password { get; set; }
+
     }
 }
