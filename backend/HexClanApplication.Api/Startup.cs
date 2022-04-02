@@ -20,6 +20,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using HexClanApplication.Api.Contracts.Services;
 using System.Text;
+using HexClanApplication.Api.Settings;
+using Microsoft.AspNetCore.Identity;
 
 namespace HexClanApplication.Api
 {
@@ -44,8 +46,8 @@ namespace HexClanApplication.Api
             });
 
             services.AddIdentity<User, UserRole>()
-                .AddMongoDbStores<User, UserRole, Guid> (
-                Configuration.GetSection("MongoUrl").Value, "HexClanDatabase");
+            .AddMongoDbStores<User, UserRole, Guid> (
+            Configuration.GetSection("MongoUrl").Value, "HexClanDatabase");
 
             services.AddScoped<IAboutContentService, AboutContentService>();
             services.AddScoped<IUserService, UserService>();
@@ -104,9 +106,8 @@ namespace HexClanApplication.Api
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

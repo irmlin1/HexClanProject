@@ -44,3 +44,10 @@ C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija
 C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\ref\HexClanApplication.Api.dll
 C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\AspNetCore.Identity.MongoDbCore.dll
 C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDbGenericRepository.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

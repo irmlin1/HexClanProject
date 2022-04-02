@@ -10,6 +10,7 @@ using MongoDB.Bson;
 using HexClanApplication.Api.Contracts.Models;
 using Microsoft.AspNetCore.Identity;
 using HexClanApplication.Api.Contracts.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HexClanApplication.Api.Controllers
 {
@@ -79,6 +80,7 @@ namespace HexClanApplication.Api.Controllers
         //}
 
         [HttpGet]
+        [Authorize]
         public JsonResult GetUsers()
         {
             return _userService.GetUsers();
