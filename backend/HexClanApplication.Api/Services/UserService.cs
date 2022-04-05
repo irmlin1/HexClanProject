@@ -48,7 +48,7 @@ namespace HexClanApplication.Api.Services
             var userWithSameEmail = await _userManager.FindByEmailAsync(user.email);
             var userWithSameUserName = await _userManager.FindByNameAsync(user.userName);
 
-            if (userWithSameUserName != null && userWithSameUserName != null)
+            if (userWithSameEmail != null || userWithSameUserName != null)
             {
                 return new ResponseState
                 {

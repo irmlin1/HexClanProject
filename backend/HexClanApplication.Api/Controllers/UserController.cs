@@ -11,6 +11,7 @@ using HexClanApplication.Api.Contracts.Models;
 using Microsoft.AspNetCore.Identity;
 using HexClanApplication.Api.Contracts.Services;
 using Microsoft.AspNetCore.Authorization;
+using System.Net;
 
 namespace HexClanApplication.Api.Controllers
 {
@@ -37,7 +38,7 @@ namespace HexClanApplication.Api.Controllers
 
             var result = await _userService.RegisterAsync(user);
 
-            return result.Success ? Ok(result) : Conflict(result);
+            return Ok(result);
         }
 
         [HttpPost("role")]
@@ -50,7 +51,7 @@ namespace HexClanApplication.Api.Controllers
 
             var result = await _userService.CreateRoleAsync(role);
 
-            return result.Success ? Ok(result) : Conflict(result);
+            return Ok(result);
         }
 
         [HttpPost("login")]

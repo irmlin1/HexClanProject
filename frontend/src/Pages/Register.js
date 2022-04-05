@@ -84,8 +84,7 @@ export default function Register() {
 
         const response = await registerNewUser(user);
         setSnackOpen(true);
-        console.log(response.data)
-        console.log(response.data.Success)
+        console.log(response)
         if(response) {
             if(response.data.Success) {
                 setSnackText(response.data.Message)
