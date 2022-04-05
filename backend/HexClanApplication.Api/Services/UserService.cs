@@ -134,7 +134,7 @@ namespace HexClanApplication.Api.Services
             if (user == null)
             {
                 authenticationModel.IsAuthenticated = false;
-                authenticationModel.Message = $"No Accounts Registered with {model.Email}.";
+                authenticationModel.Message = $"No accounts registered with {model.Email}.";
 
                 return authenticationModel;
             }
@@ -161,7 +161,7 @@ namespace HexClanApplication.Api.Services
             }
 
             authenticationModel.IsAuthenticated = false;
-            authenticationModel.Message = $"Incorrect Credentials for user {user.Email}.";
+            authenticationModel.Message = $"Incorrect credentials for user {user.Email}.";
             return authenticationModel;
         }
 

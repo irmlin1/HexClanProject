@@ -6,6 +6,7 @@ import Register from './Pages/Register'
 import About from './Pages/About'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./Pages/Login";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
                 <Route path="/" element={<App/>} />
                 <Route path="/register" element={<Register/>} />
                 <Route path="/about" element={<About/>} />
+                <Route path="/login" element={<Login/>} />
             </Routes>
         </Router>
     </React.StrictMode>,
