@@ -1,6 +1,6 @@
-import {Alert, Box, Button, Divider, Snackbar} from "@mui/material";
-import React, {useState, useEffect, useCallback} from "react";
-import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draft-js';
+import {Alert, Box, Snackbar} from "@mui/material";
+import React, {useState, useEffect} from "react";
+import {EditorState, convertToRaw, convertFromRaw} from 'draft-js';
 import RichTextEditor from "../Components/RichTextEditor";
 import '../Styles/About.css';
 import {getAboutContent, updateAboutContent} from "../Services/AboutService";

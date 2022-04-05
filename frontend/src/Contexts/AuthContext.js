@@ -1,12 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-import { checkAuthStatus } from "../Services/UserService";
-// import { useCookies } from "react-cookie";
+import {checkAuthStatus} from "../Services/UserService";
 
 export const AuthContext = createContext(null);
 
 export default function AuthContextProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    // const [_cookies, removeCookie] = useCookies();
 
     useEffect(() => {
         checkStatus();

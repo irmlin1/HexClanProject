@@ -4,7 +4,7 @@ import NavigationBar from '../Components/NavigationBar';
 import {useContext} from "react";
 import {AuthContext} from "../Contexts/AuthContext";
 import {CircularProgress} from "@mui/material";
-import {Footer} from "../Components/Footer"
+import Footer from "../Components/Footer";
 
 function App() {
 

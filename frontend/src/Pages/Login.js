@@ -1,9 +1,10 @@
 import React, {useContext, useEffect, useState} from "react";
-import {checkAuthStatus, login} from "../Services/UserService";
+import {login} from "../Services/UserService";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 import {Alert, Box, Button, Container, CssBaseline, Snackbar, TextField} from "@mui/material";
-import { useNavigate } from "react-router-dom";
+
 import {AuthContext} from "../Contexts/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 const theme = createTheme();
 

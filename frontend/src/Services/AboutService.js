@@ -6,6 +6,10 @@ export const updateAboutContent = async (content) => {
     try {
         return await AxiosInstance.post("/about", {
             content: JSON.stringify(content)
+        }, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("JWT_ACCESS_TOKEN_HEX_CLAN")}`
+            }
         });
     } catch (err) {
         console.error("About page content update failed: ", err);
@@ -15,7 +19,11 @@ export const updateAboutContent = async (content) => {
 
 export const getAboutContent = async () => {
     try {
-        return await AxiosInstance.get("/about");
+        return await AxiosInstance.get("/about", {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("JWT_ACCESS_TOKEN_HEX_CLAN")}`
+            }
+        });
     } catch (err) {
         console.error("About page content retrieval was unsuccessful.", err);
         return err.response;

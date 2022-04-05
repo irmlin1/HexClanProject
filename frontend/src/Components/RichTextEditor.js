@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import SelectionState, {Editor, EditorState, RichUtils} from "draft-js";
-import {Box, Button, CircularProgress} from "@mui/material"
+import {Editor, EditorState, RichUtils} from "draft-js";
+import {Button, CircularProgress} from "@mui/material"
 import "../Styles/About.css"
 import EditIcon from "@mui/icons-material/Edit";
 

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Alert, Box, Button, Container, CssBaseline, Snackbar, TextField} from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import {getAboutContent} from "../Services/AboutService";
 import {registerNewUser} from "../Services/UserService";
 
 const theme = createTheme();
