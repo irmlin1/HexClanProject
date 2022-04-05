@@ -13,3 +13,6 @@ For frontend:
 For backend:
 1. Microsoft .NET 5 is required. Download (if needed) here: https://dotnet.microsoft.com/en-us/download/dotnet/5.0
 2. At least 2019 MS Visual Studio (2019 and later support .NET 5)
+3. Microsoft.AspNetCore.Authentication.JwtBearer (NuGet package in visual studio)
+4. System.IdentityModel.Tokens.Jwt (NuGet package in visual studio)
+
