@@ -7,17 +7,20 @@ import About from './Pages/About'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
+import AuthContext from "./Contexts/AuthContext";
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
-            <Routes>
-                <Route path="/" element={<App/>} />
-                <Route path="/register" element={<Register/>} />
-                <Route path="/about" element={<About/>} />
-                <Route path="/login" element={<Login/>} />
-            </Routes>
-        </Router>
+        <AuthContext>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<App/>} />
+                    <Route path="/register" element={<Register/>} />
+                    <Route path="/about" element={<About/>} />
+                    <Route path="/login" element={<Login/>} />
+                </Routes>
+            </Router>
+        </AuthContext>
     </React.StrictMode>,
     document.getElementById('root')
 );

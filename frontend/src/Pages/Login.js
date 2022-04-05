@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
-import {login} from "../Services/UserService";
+import React, {useContext, useEffect, useState} from "react";
+import {checkAuthStatus, login} from "../Services/UserService";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 import {Alert, Box, Button, Container, CssBaseline, Snackbar, TextField} from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import {AuthContext} from "../Contexts/AuthContext";
 
 const theme = createTheme();
 
@@ -15,6 +16,7 @@ export default function Login() {
     const [snackText, setSnackText] = useState("");
 
     const navigate = useNavigate();
+    const { setIsAuthenticated } = useContext(AuthContext);
 
     const redirect = () => {
         navigate("/");
@@ -49,8 +51,12 @@ export default function Login() {
 
         if (response) {
             if(response.data.IsAuthenticated) {
+                // save access token and role to local storage
+                localStorage.setItem('JWT_ACCESS_TOKEN_HEX_CLAN', response.data.Token)
+
+                setIsAuthenticated(true);
+
                 //redirect to homepage
-                console.log(response.data)
                 redirect()
             } else {
                 setSnackOpen(true);

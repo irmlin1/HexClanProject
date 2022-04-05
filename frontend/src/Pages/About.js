@@ -13,6 +13,7 @@ export default function About() {
     const [snackText, setSnackText] = useState("");
     const [snackColor, setSnackColor] = useState("success");
     const [editingMode, setEditingMode] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     // Allow to edit text only for admins/mods, for users - readonly mode
     const isAdmin = true;
@@ -27,9 +28,11 @@ export default function About() {
         if(response.status === 200) {   //&& response.data.success
             const content = convertFromRaw(JSON.parse(response.data.content))
             setContent(EditorState.createWithContent(content))
+            setIsLoading(false);
         }
         else {
             setContent(EditorState.createEmpty);
+            setIsLoading(true);
             console.error("Could not fetch about page content from the server")
         }
     }
@@ -87,6 +90,7 @@ export default function About() {
             </div>
 
             <RichTextEditor
+                isLoading={isLoading}
                 readOnly={!isAdmin}
                 content={content}
                 setContent={setContent}

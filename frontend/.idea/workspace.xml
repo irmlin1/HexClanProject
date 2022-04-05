@@ -3,12 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6c21284f-3dab-4211-8201-851badfcacb2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../backend/.vs/HexClanApplication/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/.vs/HexClanApplication/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/HexClanApplication.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/HexClanApplication.Api/bin/Debug/net5.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RichTextEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RichTextEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/httpClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/httpClient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +61,7 @@
       <workItem from="1647593203709" duration="19324000" />
       <workItem from="1647767002410" duration="5429000" />
       <workItem from="1648399780953" duration="1577000" />
-      <workItem from="1649147157900" duration="3578000" />
+      <workItem from="1649147157900" duration="8630000" />
     </task>
     <servers />
   </component>

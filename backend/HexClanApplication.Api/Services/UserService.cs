@@ -151,6 +151,7 @@ namespace HexClanApplication.Api.Services
 
                     var rolesList = await _userManager.GetRolesAsync(user).ConfigureAwait(false);
                     authenticationModel.Roles = rolesList.ToList();
+                    
 
                     return authenticationModel;
                 }

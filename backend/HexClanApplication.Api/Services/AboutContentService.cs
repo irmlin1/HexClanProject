@@ -16,6 +16,7 @@ namespace HexClanApplication.Api.Services
             _aboutContentCollection = database.GetCollection<AboutContent>("AboutContent");
         }
 
+
         public JsonResult GetContent()
         {
             var dblist = _aboutContentCollection.AsQueryable().ToList();

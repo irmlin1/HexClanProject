@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import SelectionState, {Editor, EditorState, RichUtils} from "draft-js";
-import {Box, Button} from "@mui/material"
+import {Box, Button, CircularProgress} from "@mui/material"
 import "../Styles/About.css"
 import EditIcon from "@mui/icons-material/Edit";
 
 
 export default function RichTextEditor(props) {
-    const { readOnly, content, setContent, editingMode, setEditingMode, handleButtonClick } = props;
+    const { readOnly, content, setContent, editingMode, setEditingMode, handleButtonClick, isLoading } = props;
     const editor = React.useRef(null);
 
     const [editorState, setEditorState] = useState(() =>
@@ -71,13 +71,17 @@ export default function RichTextEditor(props) {
                 </div>
             </div>
             <div>
-                <Editor
-                    ref={editor}
-                    editorState={editorState}
-                    handleKeyCommand={command => handleKeyCommand(command)}
-                    onChange={newState => handleChange(newState)}
-                    readOnly={!editingMode}
-                />
+                {
+                    isLoading ?
+                        <CircularProgress/> :
+                        <Editor
+                            ref={editor}
+                            editorState={editorState}
+                            handleKeyCommand={command => handleKeyCommand(command)}
+                            onChange={newState => handleChange(newState)}
+                            readOnly={!editingMode}
+                        />
+                }
             </div>
         </div>
     );
