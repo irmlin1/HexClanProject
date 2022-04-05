@@ -1585,23 +1585,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\irman\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\drebu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectUniqueName": "c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "projectName": "HexClanApplication.Api",
-      "projectPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
-      "packagesPath": "C:\\Users\\irman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\obj\\",
+      "projectPath": "c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "packagesPath": "C:\\Users\\drebu\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\irman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\drebu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1666,8 +1662,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

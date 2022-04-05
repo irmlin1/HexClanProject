@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Styles/index.css';
 import App from './Pages/App';
 import Register from './Pages/Register'
 import About from './Pages/About'
@@ -8,6 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import AuthContext from "./Contexts/AuthContext";
+
+import './Styles/index.css';
+import './Styles/colors.css';
+import './Styles/global.css';
 
 ReactDOM.render(
     <React.StrictMode>

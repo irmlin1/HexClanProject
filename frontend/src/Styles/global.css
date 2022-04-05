@@ -1,0 +1,12 @@
+:root {
+  --nav-width: 85%;
+  --web-width: 85%;
+  --page-top-offset: 120px;
+}
+
+.App {
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
