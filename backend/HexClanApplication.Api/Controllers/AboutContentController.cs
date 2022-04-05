@@ -9,6 +9,7 @@ using MongoDB.Driver;
 using MongoDB.Bson;
 using HexClanApplication.Api.Contracts.Models;
 using HexClanApplication.Api.Contracts.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HexClanApplication.Api.Controllers
 {

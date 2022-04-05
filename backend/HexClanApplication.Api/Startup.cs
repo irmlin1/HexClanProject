@@ -16,7 +16,12 @@ using HexClanApplication.Api.Controllers;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
 using HexClanApplication.Api.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using HexClanApplication.Api.Contracts.Services;
+using System.Text;
+using HexClanApplication.Api.Settings;
+using Microsoft.AspNetCore.Identity;
 
 namespace HexClanApplication.Api
 {
@@ -40,7 +45,38 @@ namespace HexClanApplication.Api
                 return new MongoClient(url);
             });
 
+            services.AddIdentity<User, UserRole>()
+            .AddMongoDbStores<User, UserRole, Guid> (
+            Configuration.GetSection("MongoUrl").Value, "HexClanDatabase");
+
             services.AddScoped<IAboutContentService, AboutContentService>();
+            services.AddScoped<IUserService, UserService>();
+
+            // retrieving Jwt parameters from appsettings.json
+            services.Configure<Jwt>(Configuration.GetSection("Jwt"));
+
+            // adding and configuring jwt bearer
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(opt =>
+                {
+                    opt.RequireHttpsMetadata = false;
+                    opt.SaveToken = false;
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ClockSkew = TimeSpan.Zero,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    };
+                });
 
             //Enable CORS
             services.AddCors(c =>
@@ -70,9 +106,8 @@ namespace HexClanApplication.Api
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
