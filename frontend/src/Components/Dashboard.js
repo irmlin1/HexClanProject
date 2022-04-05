@@ -1,13 +1,18 @@
 import React from "react";
-import {Box} from "@mui/material";
-import '../Styles/HomePage.css'
+import styled from "styled-components";
 
-export default function Dashboard (){
-
+export default function Dashboard () {
     return (
-        <div className={"mainBody"}>
+        <DashboardDiv>
             <h1>Discite</h1>
             <h2>This is a web page about learning interactively</h2>
-        </div>
+        </DashboardDiv>
     );
 }
+
+const DashboardDiv = styled.div`
+    width: var(--web-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--page-top-offset);
+`;

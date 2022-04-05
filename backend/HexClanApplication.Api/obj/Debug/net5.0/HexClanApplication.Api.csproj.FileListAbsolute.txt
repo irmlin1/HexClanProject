@@ -1,44 +1,132 @@
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\appsettings.json
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.StaticWebAssets.xml
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.exe
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.deps.json
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.json
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.dev.json
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.pdb
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\DnsClient.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Bson.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Driver.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Driver.Core.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\SharpCompress.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.AssemblyReference.cache
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfoInputs.cache
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfo.cs
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.CoreCompileInputs.cache
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\scopedcss\bundle\HexClanApplication.Api.styles.css
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\staticwebassets\HexClanApplication.Api.StaticWebAssets.Manifest.cache
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.RazorTargetAssemblyInfo.cache
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.CopyComplete
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\refint\HexClanApplication.Api.dll
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.pdb
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.genruntimeconfig.cache
-C:\Users\irman\OneDrive\Stalinis kompiuteris\4 semestras\programavimo inzinerija\projektas\backend\HexClanApplication.Api\obj\Debug\net5.0\ref\HexClanApplication.Api.dll
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\bin\Debug\net5.0\appsettings.json
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.exe
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.deps.json
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.json
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.dev.json
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.dll
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.pdb
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.AssemblyReference.cache
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfoInputs.cache
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfo.cs
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.CoreCompileInputs.cache
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\scopedcss\bundle\HexClanApplication.Api.styles.css
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\staticwebassets\HexClanApplication.Api.StaticWebAssets.Manifest.cache
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.RazorTargetAssemblyInfo.cache
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.dll
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\refint\HexClanApplication.Api.dll
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.pdb
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.genruntimeconfig.cache
+C:\Users\irman\source\repos\HexClanApplication\HexClanApplication.Api\obj\Debug\net5.0\ref\HexClanApplication.Api.dll
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\bin\Debug\net5.0\appsettings.json
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.exe
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.deps.json
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.json
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.dev.json
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.dll
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.pdb
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.AssemblyReference.cache
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfoInputs.cache
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfo.cs
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.CoreCompileInputs.cache
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\scopedcss\bundle\HexClanApplication.Api.styles.css
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\staticwebassets\HexClanApplication.Api.StaticWebAssets.Manifest.cache
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.RazorTargetAssemblyInfo.cache
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.dll
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\refint\HexClanApplication.Api.dll
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.pdb
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.genruntimeconfig.cache
+C:\Users\irman\source\repos\HexClanApplication\Backend\HexClanApplication.Api\obj\Debug\net5.0\ref\HexClanApplication.Api.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\appsettings.json
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.exe
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.deps.json
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.json
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.dev.json
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\ref\HexClanApplication.Api.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.pdb
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\DnsClient.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.AssemblyReference.cache
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfoInputs.cache
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfo.cs
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.CoreCompileInputs.cache
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\staticwebassets\HexClanApplication.Api.StaticWebAssets.Manifest.cache
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\staticwebassets\HexClanApplication.Api.StaticWebAssets.xml
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\scopedcss\bundle\HexClanApplication.Api.styles.css
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.RazorTargetAssemblyInfo.cache
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.CopyComplete
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\ref\HexClanApplication.Api.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.pdb
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.genruntimeconfig.cache
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\super\OneDrive\Desktop\Antri Metai\HexClan\.git\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\appsettings.json
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.exe
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.deps.json
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.json
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.runtimeconfig.dev.json
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\ref\HexClanApplication.Api.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\HexClanApplication.Api.pdb
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\DnsClient.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.AssemblyReference.cache
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfoInputs.cache
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.AssemblyInfo.cs
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.CoreCompileInputs.cache
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\staticwebassets\HexClanApplication.Api.StaticWebAssets.Manifest.cache
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\staticwebassets\HexClanApplication.Api.StaticWebAssets.xml
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\scopedcss\bundle\HexClanApplication.Api.styles.css
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.RazorTargetAssemblyInfo.cache
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.csproj.CopyComplete
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\ref\HexClanApplication.Api.dll
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.pdb
+C:\Users\drebu\Desktop\HexClanProject\backend\HexClanApplication.Api\obj\Debug\net5.0\HexClanApplication.Api.genruntimeconfig.cache
