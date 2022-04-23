@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "My1j/iTd+TOtvkNcghhTqsaOdJPc6hjKR6giSwqltxdzcSIsBrKFxv4WWuR5PBdBwE1f6Mxk9KeWGevBAKMpOQ==",
+  "dgSpecHash": "/ul8mhEUEVcxqCWe44fNIpqrr2rqrLKjJkIBtPvccqDu9hhJkRWJcuZtB+/vPmiCZbbDvGycVdNiM+fSaRdYnw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+  "projectFilePath": "C:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\drebu\\.nuget\\packages\\dnsclient\\1.6.0\\dnsclient.1.6.0.nupkg.sha512",
     "C:\\Users\\drebu\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.15\\microsoft.aspnetcore.jsonpatch.5.0.15.nupkg.sha512",
@@ -22,12 +22,5 @@
     "C:\\Users\\drebu\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\drebu\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

@@ -842,11 +842,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectUniqueName": "C:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "projectName": "HexClanApplication.Api",
-      "projectPath": "c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectPath": "C:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "packagesPath": "C:\\Users\\drebu\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
+      "outputPath": "C:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\drebu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -905,13 +905,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file c:\\Users\\drebu\\Desktop\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
