@@ -49,7 +49,6 @@ namespace HexClanApplication.Api.Controllers
             {
                 return new JsonResult("Užduotis neištrinta");
             }
-
         }
     }
 }
