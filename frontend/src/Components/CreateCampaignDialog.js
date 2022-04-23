@@ -2,12 +2,12 @@ import * as React from 'react';
 import {
     Box,
     Button,
-    Checkbox, FormControl,
+    Checkbox, Chip, FormControl,
     InputLabel,
     ListItemText,
     MenuItem,
     Modal,
-    OutlinedInput, Select,
+    OutlinedInput, Select, Stack,
     TextField
 } from "@mui/material";
 import {useState} from "react";
@@ -20,6 +20,8 @@ export default function CreateCampaignDialog(props) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [selectedTopics, setSelectedTopics] = useState([]);
+    const [tag, setTag] = useState("");
+    const [selectedTags, setSelectedTags] = useState([]);
 
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
@@ -37,6 +39,28 @@ export default function CreateCampaignDialog(props) {
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
+    };
+
+    const handleTagChange = (event) => {
+        setTag(event.target.value);
+    };
+
+    const handleAddTag = () => {
+        if(tag) {
+            if(!selectedTags.includes(tag) && tag.trim().length !== 0){
+                setSelectedTags([...selectedTags, tag]);
+            }
+            setTag("");
+        }
+    };
+
+    const handleDeleteTag = (tagToDelete) => {
+        const array = [...selectedTags];
+        const index = array.indexOf(tagToDelete);
+        if (index !== -1) {
+            array.splice(index, 1);
+            setSelectedTags(array);
+        }
     };
 
     const style = {
@@ -90,16 +114,17 @@ export default function CreateCampaignDialog(props) {
                         onChange={handleDescriptionChange}
                         value={description}
                     />
+
                     <h3>Topics</h3>
                     <FormControl sx={{ m: 1, width: 300 }}>
-                        <InputLabel id="multiple-checkbox-label">Tag</InputLabel>
+                        <InputLabel id="multiple-checkbox-label">Topics</InputLabel>
                         <Select
                             labelId="multiple-checkbox-label"
                             id="demo-multiple-checkbox"
                             multiple
                             value={selectedTopics}
                             onChange={handleTopicChange}
-                            input={<OutlinedInput label="Tag" />}
+                            input={<OutlinedInput label="Topics" />}
                             renderValue={(selected) => selected.join(', ')}
                             MenuProps={MenuProps}
                         >
@@ -112,6 +137,27 @@ export default function CreateCampaignDialog(props) {
                                 )
                             }
                         </Select>
+                    </FormControl>
+
+                    <h3>Tags</h3>
+                    <FormControl sx={{ m: 1, width: 300 }}>
+                        <TextField
+                            margin="normal"
+                            required
+                            name="tags"
+                            label="Tags"
+                            id="tags"
+                            onChange={handleTagChange}
+                            value={tag}
+                        />
+                        <Button onClick={handleAddTag} variant="contained">Add Tag</Button>
+                        <Stack direction="row" spacing={1} sx={{mt:2}}>
+                            {
+                                selectedTags.map(tag =>
+                                    <Chip key={tag} label={tag} onDelete={() => handleDeleteTag(tag)} />
+                                )
+                            }
+                        </Stack>
                     </FormControl>
                 </Box>
             </Modal>
