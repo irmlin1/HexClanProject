@@ -11,6 +11,7 @@ import AuthContext from "./Contexts/AuthContext";
 import './Styles/index.css';
 import './Styles/colors.css';
 import './Styles/global.css';
+import Campaigns from "./Pages/Campaigns";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.render(
                     <Route path="/register" element={<Register/>} />
                     <Route path="/about" element={<About/>} />
                     <Route path="/login" element={<Login/>} />
+                    <Route path="/campaigns" element={<Campaigns/>} />
                 </Routes>
             </Router>
         </AuthContext>
