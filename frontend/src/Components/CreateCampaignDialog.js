@@ -1,79 +1,27 @@
 import * as React from 'react';
+import {useState} from 'react';
 import {
-    Box,
+    Alert,
     Button,
-    Checkbox, Chip, FormControl,
+    Checkbox,
+    Chip,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    FormControl,
     InputLabel,
     ListItemText,
     MenuItem,
-    Modal,
-    OutlinedInput, Select, Stack,
+    OutlinedInput,
+    Select, Snackbar,
     TextField
 } from "@mui/material";
-import {useState} from "react";
-import {Topics} from "../Enums/Topics";
+import {Topics} from "../Enums/CampaignEnums";
+import CreateTaskDialog from "./CreateTaskDialog";
+import FormSection from "./FormSection";
+import {createNewCampaign} from "../Services/CampaignService";
 
 export default function CreateCampaignDialog(props) {
-
-    const {dialogOpen, handleOpen, handleClose} = props;
-
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [selectedTopics, setSelectedTopics] = useState([]);
-    const [tag, setTag] = useState("");
-    const [selectedTags, setSelectedTags] = useState([]);
-
-    const handleTitleChange = (event) => {
-        setTitle(event.target.value);
-    };
-
-    const handleDescriptionChange = (event) => {
-        setDescription(event.target.value);
-    };
-
-    const handleTopicChange = (event) => {
-        const {
-            target: { value },
-        } = event;
-        setSelectedTopics(
-            // On autofill we get a stringified value.
-            typeof value === 'string' ? value.split(',') : value,
-        );
-    };
-
-    const handleTagChange = (event) => {
-        setTag(event.target.value);
-    };
-
-    const handleAddTag = () => {
-        if(tag) {
-            if(!selectedTags.includes(tag) && tag.trim().length !== 0){
-                setSelectedTags([...selectedTags, tag]);
-            }
-            setTag("");
-        }
-    };
-
-    const handleDeleteTag = (tagToDelete) => {
-        const array = [...selectedTags];
-        const index = array.indexOf(tagToDelete);
-        if (index !== -1) {
-            array.splice(index, 1);
-            setSelectedTags(array);
-        }
-    };
-
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'background.paper',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-    };
 
     const ITEM_HEIGHT = 48;
     const ITEM_PADDING_TOP = 8;
@@ -86,81 +34,332 @@ export default function CreateCampaignDialog(props) {
         },
     };
 
+    const {dialogOpen, handleOpen, handleClose} = props;
+
+    const [tag, setTag] = useState("");
+    const [campaign, setCampaign] = useState({
+        title: "",
+        description: "",
+        selectedTopics: [],
+        selectedTags: [],
+        addedTasks: []
+    })
+    const [snackOpen, setSnackOpen] = useState(false);
+    const [snackColor, setSnackColor] = useState("success");
+    const [snackText, setSnackText] = useState("");
+
+    const handleTitleChange = (event) => {
+        const copy = {...campaign};
+        copy.title = event.target.value;
+        setCampaign(copy);
+    };
+
+    const handleDescriptionChange = (event) => {
+        const copy = {...campaign};
+        copy.description = event.target.value;
+        setCampaign(copy);
+    };
+
+    const handleTopicChange = (event) => {
+        const copy = {...campaign};
+        const {
+            target: { value },
+        } = event;
+
+        copy.selectedTopics = (typeof value === 'string' ? value.split(',') : value);
+        setCampaign(copy);
+    };
+
+    const handleTagChange = (event) => {
+        setTag(event.target.value);
+    };
+
+    const handleAddTag = () => {
+        if(tag) {
+            if(!campaign.selectedTags.includes(tag) && tag.trim().length !== 0){
+                const copy = {...campaign};
+                copy.selectedTags = [...copy.selectedTags, tag];
+                setCampaign(copy);
+            }
+            setTag("");
+        }
+    };
+
+    const handleDeleteTag = (tagToDelete) => {
+        const copy = {...campaign};
+        const array = [...copy.selectedTags];
+        const index = array.indexOf(tagToDelete);
+        if (index !== -1) {
+            array.splice(index, 1);
+            copy.selectedTags = array;
+            setCampaign(copy);
+        }
+    };
+
+    const handleAddTask = () => {
+        const copy = {...campaign};
+        const task = {
+            question: "",
+            difficulty: "",
+            answers: []
+        }
+        copy.addedTasks = [...copy.addedTasks, task];
+        setCampaign(copy);
+    }
+
+    const handleTaskQuestionChange = (event, index) => {
+        const copy = {...campaign};
+        const array = [...copy.addedTasks];
+        array[index] = {
+            ...array[index],
+            question: event.target.value
+        };
+        copy.addedTasks = array;
+        setCampaign(copy);
+    }
+
+    const handleTaskDifficultyChange = (event, index) => {
+        const copy = {...campaign};
+        const array = [...copy.addedTasks];
+        array[index] = {
+            ...array[index],
+            difficulty: event.target.value
+        };
+        copy.addedTasks = array;
+        setCampaign(copy);
+    }
+
+    const handleDeleteTask = (event, index) => {
+        const copy = {...campaign};
+        const array = [...copy.addedTasks];
+
+        array.splice(index, 1);
+        copy.addedTasks = array;
+        setCampaign(copy);
+    }
+
+    const handleAddAnswer = (index) => {
+        const copy = {...campaign};
+        const array = [...copy.addedTasks];
+        array[index] = {
+            ...array[index],
+            answers: [...array[index].answers, {
+                content: "",
+                isCorrect: false
+            }]
+        }
+
+        copy.addedTasks = array;
+        setCampaign(copy);
+    }
+
+    const handleTaskAnswerChange = (event, taskIndex, answerIndex) => {
+        const copy = {...campaign};
+        const array = [...copy.addedTasks];
+
+        const answers = [...array[taskIndex].answers];
+        answers[answerIndex].content = event.target.value;
+        array[taskIndex].answers = answers;
+
+        copy.addedTasks = array;
+        setCampaign(copy);
+    }
+
+    const handleDeleteAnswer = (taskIndex, answerIndex) => {
+        const copy = {...campaign};
+        const array = [...copy.addedTasks];
+
+        const answers = [...array[taskIndex].answers];
+        answers.splice(answerIndex, 1);
+        array[taskIndex].answers = answers;
+
+        copy.addedTasks = array;
+        setCampaign(copy);
+    }
+
+    const handleIsCorrectAnswerChange = (event, taskIndex, answerIndex) => {
+        const copy = {...campaign};
+        const array = [...copy.addedTasks];
+
+        const answers = [...array[taskIndex].answers];
+        answers[answerIndex].isCorrect = event.target.checked;
+        array[taskIndex].answers = answers;
+
+        copy.addedTasks = array;
+        setCampaign(copy);
+    }
+
+    function validate() {
+        if (
+            !campaign.title ||
+            !campaign.description
+        )
+            return {validated: false, message: "Some fields were left empty!"};
+
+        if (!campaign.selectedTopics.length)
+            return {validated: false, message: "No topics selected!"};
+
+        if (!campaign.addedTasks.length)
+            return {validated: false, message: "No tasks added!"};
+
+        if (campaign.addedTasks.length) {
+            for (const task of campaign.addedTasks) {
+                if (!task.question || !task.difficulty) {
+                    return {validated: false, message: "Some task fields were left empty!"};
+                }
+                if (!task.answers.length || task.answers.length < 2)
+                    return {validated: false, message: "Each task should have at least 2 answers!"};
+                if (task.answers.length) {
+                    for (const answer of task.answers) {
+                        if (!answer)
+                            return {validated: false, message: "Some answers were left empty!"};
+                    }
+                }
+            }
+
+            return {validated: true, message: ""};
+        }
+    }
+
+    const handleCreateCampaign = async (event) => {
+        event.preventDefault();
+
+        const valid = validate();
+        if(!valid.validated){
+            setSnackOpen(true);
+            setSnackColor("error")
+            setSnackText(valid.message);
+            return;
+        }
+
+        const response = await createNewCampaign(campaign);
+    }
+
     return (
         <div>
+            <Snackbar
+                anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
+                open={snackOpen}
+                autoHideDuration={4000}
+                onClose={() => setSnackOpen(false)}
+            >
+                <Alert
+                    onClose={() => setSnackOpen(false)}
+                    severity={snackColor}
+                    sx={{ width: "100%" }}
+                >
+                    {snackText}
+                </Alert>
+            </Snackbar>
             <Button onClick={handleOpen} variant="contained">Add Campaign</Button>
-            <Modal
+            <Dialog
+                fullWidth
+                maxWidth="sm"
                 open={dialogOpen}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
-                    <TextField
-                        margin="normal"
-                        required
-                        name="title"
-                        label="Title"
-                        id="title"
-                        onChange={handleTitleChange}
-                        value={title}
-                    />
-                    <TextField
-                        margin="normal"
-                        required
-                        name="description"
-                        label="Description"
-                        id="description"
-                        onChange={handleDescriptionChange}
-                        value={description}
-                    />
-
-                    <h3>Topics</h3>
-                    <FormControl sx={{ m: 1, width: 300 }}>
-                        <InputLabel id="multiple-checkbox-label">Topics</InputLabel>
-                        <Select
-                            labelId="multiple-checkbox-label"
-                            id="demo-multiple-checkbox"
-                            multiple
-                            value={selectedTopics}
-                            onChange={handleTopicChange}
-                            input={<OutlinedInput label="Topics" />}
-                            renderValue={(selected) => selected.join(', ')}
-                            MenuProps={MenuProps}
-                        >
-                            {
-                                Object.entries(Topics).map(([key, value]) =>
-                                    <MenuItem key={value} value={value}>
-                                        <Checkbox checked={selectedTopics.indexOf(value) > -1} />
-                                        <ListItemText primary={value} />
-                                    </MenuItem>
-                                )
-                            }
-                        </Select>
-                    </FormControl>
-
-                    <h3>Tags</h3>
-                    <FormControl sx={{ m: 1, width: 300 }}>
+                <DialogContent style={{ overflowY: "scroll" }}>
+                    <FormSection title={"General"}>
                         <TextField
                             margin="normal"
                             required
-                            name="tags"
-                            label="Tags"
-                            id="tags"
-                            onChange={handleTagChange}
-                            value={tag}
+                            name="title"
+                            label="Title"
+                            id="title"
+                            fullWidth
+                            onChange={handleTitleChange}
+                            value={campaign.title}
                         />
-                        <Button onClick={handleAddTag} variant="contained">Add Tag</Button>
-                        <Stack direction="row" spacing={1} sx={{mt:2}}>
-                            {
-                                selectedTags.map(tag =>
-                                    <Chip key={tag} label={tag} onDelete={() => handleDeleteTag(tag)} />
-                                )
-                            }
-                        </Stack>
-                    </FormControl>
-                </Box>
-            </Modal>
+                        <TextField
+                            margin="normal"
+                            required
+                            multiline
+                            fullWidth
+                            name="description"
+                            label="Description"
+                            id="description"
+                            onChange={handleDescriptionChange}
+                            value={campaign.description}
+                        />
+                    </FormSection>
+
+                    <FormSection title={"Topics"}>
+                        <FormControl fullWidth>
+                            <InputLabel id="multiple-checkbox-label">Topics</InputLabel>
+                            <Select
+                                labelId="multiple-checkbox-label"
+                                id="demo-multiple-checkbox"
+                                multiple
+                                fullWidth
+                                value={campaign.selectedTopics}
+                                onChange={handleTopicChange}
+                                input={<OutlinedInput label="Topics" />}
+                                renderValue={(selected) => selected.join(', ')}
+                                MenuProps={MenuProps}
+                            >
+                                {
+                                    Object.entries(Topics).map(([key, value]) =>
+                                        <MenuItem key={value} value={value}>
+                                            <Checkbox checked={campaign.selectedTopics.indexOf(value) > -1} />
+                                            <ListItemText primary={value} />
+                                        </MenuItem>
+                                    )
+                                }
+                            </Select>
+                        </FormControl>
+                    </FormSection>
+
+                    <FormSection title={"Tags"}>
+                        <FormControl fullWidth>
+                            <TextField
+                                margin="normal"
+                                fullWidth
+                                name="tags"
+                                label="Tags"
+                                id="tags"
+                                onChange={handleTagChange}
+                                value={tag}
+                            />
+                            <Button onClick={handleAddTag} variant="contained">Add Tag</Button>
+                            <div style={{display:"inline"}}>
+                                {
+                                    campaign.selectedTags.map(tag =>
+                                        <Chip key={tag} label={tag} sx={{my:1}} onDelete={() => handleDeleteTag(tag)} />
+                                    )
+                                }
+                            </div>
+                        </FormControl>
+                    </FormSection>
+
+                    <FormSection title={"Tasks"}>
+                        <CreateTaskDialog
+                            addedTasks={campaign.addedTasks}
+                            handleAddTask={handleAddTask}
+                            handleDeleteTask={handleDeleteTask}
+                            handleTaskQuestionChange={handleTaskQuestionChange}
+                            handleTaskDifficultyChange={handleTaskDifficultyChange}
+                            handleAddAnswer={handleAddAnswer}
+                            handleTaskAnswerChange={handleTaskAnswerChange}
+                            handleDeleteAnswer={handleDeleteAnswer}
+                            handleIsCorrectAnswerChange={handleIsCorrectAnswerChange}
+                        />
+                    </FormSection>
+
+                </DialogContent>
+
+                <DialogActions>
+                        <Button
+                            color={"success"}
+                            onClick={handleCreateCampaign}
+                            variant="contained"
+                            style={{width:"100%"}}
+                        >
+                            Create
+                        </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     );
 }

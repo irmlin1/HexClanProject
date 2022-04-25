@@ -5,5 +5,12 @@ export const Topics = Object.freeze({
     SCIENCE: "Science",
     PROGRAMMING: "Programming",
     ALGORITHMS: "Algorithms",
-    CHEMISTRY: "Chemistry"
+    CHEMISTRY: "Chemistry",
+    POLITICS: "Politics"
 });
+
+export const Difficulties = Object.freeze({
+    EASY: "Easy",
+    MEDIUM: "Medium",
+    HARD: "Hard"
+})
