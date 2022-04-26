@@ -13,7 +13,8 @@ import {
     ListItemText,
     MenuItem,
     OutlinedInput,
-    Select, Snackbar,
+    Select,
+    Snackbar,
     TextField
 } from "@mui/material";
 import {Topics} from "../Enums/CampaignEnums";
@@ -67,6 +68,9 @@ export default function CreateCampaignDialog(props) {
         } = event;
 
         copy.topics = (typeof value === 'string' ? value.split(',') : value);
+        if(copy.tasks.length) {
+            copy.tasks = copy.tasks.map(task => ({...task, topics: copy.topics}));
+        }
         setCampaign(copy);
     };
 
@@ -101,6 +105,7 @@ export default function CreateCampaignDialog(props) {
         const task = {
             question: "",
             difficulty: "",
+            topics: campaign.topics,
             answers: []
         }
         copy.tasks = [...copy.tasks, task];
