@@ -1,15 +1,16 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Collections.Generic;
 
 namespace HexClanApplication.Api.Contracts.Models
 {
-    public class TasksModel
+    public class Task
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string TaskId { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int Difficulty { get; set; }
+        public string Question { get; set; }
+        public string Difficulty { get; set; }
+        public List<Answer> Answers { get; set; }
     }
 }

@@ -51,6 +51,7 @@ namespace HexClanApplication.Api
 
             services.AddScoped<IAboutContentService, AboutContentService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICampaignService, CampaignService>();
 
             // retrieving Jwt parameters from appsettings.json
             services.Configure<Jwt>(Configuration.GetSection("Jwt"));

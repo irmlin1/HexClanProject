@@ -40,9 +40,9 @@ export default function CreateCampaignDialog(props) {
     const [campaign, setCampaign] = useState({
         title: "",
         description: "",
-        selectedTopics: [],
-        selectedTags: [],
-        addedTasks: []
+        topics: [],
+        tags: [],
+        tasks: []
     })
     const [snackOpen, setSnackOpen] = useState(false);
     const [snackColor, setSnackColor] = useState("success");
@@ -66,7 +66,7 @@ export default function CreateCampaignDialog(props) {
             target: { value },
         } = event;
 
-        copy.selectedTopics = (typeof value === 'string' ? value.split(',') : value);
+        copy.topics = (typeof value === 'string' ? value.split(',') : value);
         setCampaign(copy);
     };
 
@@ -76,9 +76,9 @@ export default function CreateCampaignDialog(props) {
 
     const handleAddTag = () => {
         if(tag) {
-            if(!campaign.selectedTags.includes(tag) && tag.trim().length !== 0){
+            if(!campaign.tags.includes(tag) && tag.trim().length !== 0){
                 const copy = {...campaign};
-                copy.selectedTags = [...copy.selectedTags, tag];
+                copy.tags = [...copy.tags, tag];
                 setCampaign(copy);
             }
             setTag("");
@@ -87,11 +87,11 @@ export default function CreateCampaignDialog(props) {
 
     const handleDeleteTag = (tagToDelete) => {
         const copy = {...campaign};
-        const array = [...copy.selectedTags];
+        const array = [...copy.tags];
         const index = array.indexOf(tagToDelete);
         if (index !== -1) {
             array.splice(index, 1);
-            copy.selectedTags = array;
+            copy.tags = array;
             setCampaign(copy);
         }
     };
@@ -103,44 +103,44 @@ export default function CreateCampaignDialog(props) {
             difficulty: "",
             answers: []
         }
-        copy.addedTasks = [...copy.addedTasks, task];
+        copy.tasks = [...copy.tasks, task];
         setCampaign(copy);
     }
 
     const handleTaskQuestionChange = (event, index) => {
         const copy = {...campaign};
-        const array = [...copy.addedTasks];
+        const array = [...copy.tasks];
         array[index] = {
             ...array[index],
             question: event.target.value
         };
-        copy.addedTasks = array;
+        copy.tasks = array;
         setCampaign(copy);
     }
 
     const handleTaskDifficultyChange = (event, index) => {
         const copy = {...campaign};
-        const array = [...copy.addedTasks];
+        const array = [...copy.tasks];
         array[index] = {
             ...array[index],
             difficulty: event.target.value
         };
-        copy.addedTasks = array;
+        copy.tasks = array;
         setCampaign(copy);
     }
 
     const handleDeleteTask = (event, index) => {
         const copy = {...campaign};
-        const array = [...copy.addedTasks];
+        const array = [...copy.tasks];
 
         array.splice(index, 1);
-        copy.addedTasks = array;
+        copy.tasks = array;
         setCampaign(copy);
     }
 
     const handleAddAnswer = (index) => {
         const copy = {...campaign};
-        const array = [...copy.addedTasks];
+        const array = [...copy.tasks];
         array[index] = {
             ...array[index],
             answers: [...array[index].answers, {
@@ -149,43 +149,43 @@ export default function CreateCampaignDialog(props) {
             }]
         }
 
-        copy.addedTasks = array;
+        copy.tasks = array;
         setCampaign(copy);
     }
 
     const handleTaskAnswerChange = (event, taskIndex, answerIndex) => {
         const copy = {...campaign};
-        const array = [...copy.addedTasks];
+        const array = [...copy.tasks];
 
         const answers = [...array[taskIndex].answers];
         answers[answerIndex].content = event.target.value;
         array[taskIndex].answers = answers;
 
-        copy.addedTasks = array;
+        copy.tasks = array;
         setCampaign(copy);
     }
 
     const handleDeleteAnswer = (taskIndex, answerIndex) => {
         const copy = {...campaign};
-        const array = [...copy.addedTasks];
+        const array = [...copy.tasks];
 
         const answers = [...array[taskIndex].answers];
         answers.splice(answerIndex, 1);
         array[taskIndex].answers = answers;
 
-        copy.addedTasks = array;
+        copy.tasks = array;
         setCampaign(copy);
     }
 
     const handleIsCorrectAnswerChange = (event, taskIndex, answerIndex) => {
         const copy = {...campaign};
-        const array = [...copy.addedTasks];
+        const array = [...copy.tasks];
 
         const answers = [...array[taskIndex].answers];
         answers[answerIndex].isCorrect = event.target.checked;
         array[taskIndex].answers = answers;
 
-        copy.addedTasks = array;
+        copy.tasks = array;
         setCampaign(copy);
     }
 
@@ -196,14 +196,14 @@ export default function CreateCampaignDialog(props) {
         )
             return {validated: false, message: "Some fields were left empty!"};
 
-        if (!campaign.selectedTopics.length)
+        if (!campaign.topics.length)
             return {validated: false, message: "No topics selected!"};
 
-        if (!campaign.addedTasks.length)
+        if (!campaign.tasks.length)
             return {validated: false, message: "No tasks added!"};
 
-        if (campaign.addedTasks.length) {
-            for (const task of campaign.addedTasks) {
+        if (campaign.tasks.length) {
+            for (const task of campaign.tasks) {
                 if (!task.question || !task.difficulty) {
                     return {validated: false, message: "Some task fields were left empty!"};
                 }
@@ -233,6 +233,24 @@ export default function CreateCampaignDialog(props) {
         }
 
         const response = await createNewCampaign(campaign);
+
+        setSnackOpen(true);
+        console.log(response)
+        if(response) {
+            if(response.data.Success) {
+                setSnackText(response.data.Message)
+                setSnackColor("success")
+                handleClose();
+            } else {
+                setSnackColor("error")
+                if(response.data.Message) {
+                    setSnackText(response.data.Message);
+                }
+            }
+        } else {
+            setSnackColor("error");
+            setSnackText("A server error has occurred.");
+        }
     }
 
     return (
@@ -293,7 +311,7 @@ export default function CreateCampaignDialog(props) {
                                 id="demo-multiple-checkbox"
                                 multiple
                                 fullWidth
-                                value={campaign.selectedTopics}
+                                value={campaign.topics}
                                 onChange={handleTopicChange}
                                 input={<OutlinedInput label="Topics" />}
                                 renderValue={(selected) => selected.join(', ')}
@@ -302,7 +320,7 @@ export default function CreateCampaignDialog(props) {
                                 {
                                     Object.entries(Topics).map(([key, value]) =>
                                         <MenuItem key={value} value={value}>
-                                            <Checkbox checked={campaign.selectedTopics.indexOf(value) > -1} />
+                                            <Checkbox checked={campaign.topics.indexOf(value) > -1} />
                                             <ListItemText primary={value} />
                                         </MenuItem>
                                     )
@@ -325,7 +343,7 @@ export default function CreateCampaignDialog(props) {
                             <Button onClick={handleAddTag} variant="contained">Add Tag</Button>
                             <div style={{display:"inline"}}>
                                 {
-                                    campaign.selectedTags.map(tag =>
+                                    campaign.tags.map(tag =>
                                         <Chip key={tag} label={tag} sx={{my:1}} onDelete={() => handleDeleteTag(tag)} />
                                     )
                                 }
@@ -335,7 +353,7 @@ export default function CreateCampaignDialog(props) {
 
                     <FormSection title={"Tasks"}>
                         <CreateTaskDialog
-                            addedTasks={campaign.addedTasks}
+                            addedTasks={campaign.tasks}
                             handleAddTask={handleAddTask}
                             handleDeleteTask={handleDeleteTask}
                             handleTaskQuestionChange={handleTaskQuestionChange}
