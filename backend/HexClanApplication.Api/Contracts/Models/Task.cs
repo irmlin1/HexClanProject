@@ -14,4 +14,6 @@ namespace HexClanApplication.Api.Contracts.Models
         public List<string> Topics { get; set; }
         public List<Answer> Answers { get; set; }
     }
+
 }
+
