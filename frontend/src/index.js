@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import AuthContext from "./Contexts/AuthContext";
+import UserList from "./Pages/UserList"
 
 import './Styles/index.css';
 import './Styles/colors.css';
@@ -23,6 +24,7 @@ ReactDOM.render(
                     <Route path="/about" element={<About/>} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/campaigns" element={<Campaigns/>} />
+                    <Route path="/users" element={<UserList/>} />
                 </Routes>
             </Router>
         </AuthContext>
