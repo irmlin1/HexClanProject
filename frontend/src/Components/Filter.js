@@ -11,16 +11,16 @@ export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter})
     const handleSearch = () => { //After search button is clicked
         const filtered = [];
         for (let task of tasks){ //filtering starts
-            let difPass = diffChoices.length == 0 ? true: false; // if no choice is present, pass all difficulties
-            let topicPass = topicChoices.length == 0 ? true: false; // same logic here
+            let difPass = diffChoices.length === 0 ? true: false; // if no choice is present, pass all difficulties
+            let topicPass = topicChoices.length === 0 ? true: false; // same logic here
             for (let difChoice of diffChoices){
-                if (task.Difficulty == difChoice){ //filtering by difficulty
+                if (task.Difficulty === difChoice){ //filtering by difficulty
                     difPass = true;
                 }
             }
             for (let topChoice of topicChoices){
                 for (let topic of task.Topics){
-                    if (topChoice == topic){ //filtering by topic
+                    if (topChoice === topic){ //filtering by topic
                         topicPass = true;
                     }
                 }
