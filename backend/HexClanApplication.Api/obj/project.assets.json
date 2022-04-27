@@ -1585,23 +1585,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\irman\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Vartotojas1\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Vartotojas1\\Desktop\\Programavimo inžinerija\\projektas1\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "projectName": "HexClanApplication.Api",
-      "projectPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
-      "packagesPath": "C:\\Users\\irman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\obj\\",
+      "projectPath": "C:\\Users\\Vartotojas1\\Desktop\\Programavimo inžinerija\\projektas1\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "packagesPath": "C:\\Users\\Vartotojas1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vartotojas1\\Desktop\\Programavimo inžinerija\\projektas1\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\irman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vartotojas1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1666,7 +1667,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
