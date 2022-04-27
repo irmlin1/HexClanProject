@@ -33,6 +33,11 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
+                    <Link href="/profile">
+                        Profile
+                    </Link>
+                </div>
+                <div className="nav-button">
                     <Link href="/register">
                         Register
                     </Link>

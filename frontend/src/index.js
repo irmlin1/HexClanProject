@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Profiler } from 'react';
 import ReactDOM from 'react-dom';
 import App from './Pages/App';
 import Register from './Pages/Register'
@@ -12,6 +12,7 @@ import './Styles/index.css';
 import './Styles/colors.css';
 import './Styles/global.css';
 import Campaigns from "./Pages/Campaigns";
+import Profile from './Pages/Profile';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.render(
                     <Route path="/about" element={<About/>} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/campaigns" element={<Campaigns/>} />
+                    <Route path="/profile" element={<Profile/>} />
                 </Routes>
             </Router>
         </AuthContext>

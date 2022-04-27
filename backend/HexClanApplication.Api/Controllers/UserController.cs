@@ -79,6 +79,17 @@ namespace HexClanApplication.Api.Controllers
             return _userService.GetUsers();
         }
 
+        [HttpGet("{email}")]
+        public async Task<ActionResult> GetUserAsync(string email)
+        {
+            var user = await _userService.GetAsync(email);
+            if (user is null)
+            {
+                return BadRequest();
+            }
+            return Ok(user);
+        }
+
         [HttpGet("auth-status")]
         [Authorize]
         public ResponseState CheckAuthStatus()

@@ -5,6 +5,7 @@ import {Alert, Box, Button, Container, CssBaseline, Snackbar, TextField} from "@
 
 import {AuthContext} from "../Contexts/AuthContext";
 import {useNavigate} from "react-router-dom";
+import jwt from "jwt-decode";
 
 const theme = createTheme();
 
@@ -17,7 +18,7 @@ export default function Login() {
     const [snackText, setSnackText] = useState("");
 
     const navigate = useNavigate();
-    const { setIsAuthenticated } = useContext(AuthContext);
+    const { setIsAuthenticated, userDetails, setUserDetails } = useContext(AuthContext);
 
     const redirect = () => {
         navigate("/");
@@ -55,7 +56,14 @@ export default function Login() {
                 // save access token and role to local storage
                 localStorage.setItem('JWT_ACCESS_TOKEN_HEX_CLAN', response.data.Token)
 
-                setIsAuthenticated(true);
+                setIsAuthenticated(true);      
+                if(!userDetails) {
+                    const user = jwt(response.data.Token);
+                    setUserDetails({
+                        userName: user.sub,
+                        email: user.email
+                    })
+                }
 
                 //redirect to homepage
                 redirect()
