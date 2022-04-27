@@ -18,8 +18,8 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
-                    <Link href="/tasks">
-                        Tasks
+                    <Link href="/campaigns">
+                        Campaigns
                     </Link>
                 </div>
                 <div className="nav-button">

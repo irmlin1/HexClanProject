@@ -14,6 +14,7 @@ import BrowseTasks from './Pages/BrowseTasks';
 import './Styles/index.css';
 import './Styles/colors.css';
 import './Styles/global.css';
+import Campaigns from "./Pages/Campaigns";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -27,6 +28,7 @@ ReactDOM.render(
                     <Route path="/theory" element={<PlaceHolder/>}/>
                     <Route path="/tasks" element={<BrowseTasks/>}/>
                     <Route path="/rules" element={<PlaceHolder/>}/>
+                    <Route path="/campaigns" element={<Campaigns/>} />
                 </Routes>
             </Router>
         </AuthContext>
