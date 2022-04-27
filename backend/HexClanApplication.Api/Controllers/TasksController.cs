@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using MongoDB.Driver;
 using HexClanApplication.Api.Contracts.Models;
 
@@ -14,11 +13,11 @@ namespace HexClanApplication.Api.Controllers
     [Route("api/[controller]")]
     public class TasksController : ControllerBase
     {
-        private readonly IMongoCollection<TasksModel> _taskModelsCollection;
+        private readonly IMongoCollection<Task> _taskModelsCollection;
         public TasksController(IMongoClient client)
         {
             var database = client.GetDatabase("HexClanDatabase");
-            _taskModelsCollection = database.GetCollection<TasksModel>("Tasks");
+            _taskModelsCollection = database.GetCollection<Task>("Tasks");
         }
 
         [HttpGet]
@@ -28,7 +27,7 @@ namespace HexClanApplication.Api.Controllers
             return new JsonResult(dblist);
         }
         [HttpPost]
-        public JsonResult Post(TasksModel tsk)
+        public JsonResult Post(Task tsk)
         {
             _taskModelsCollection.InsertOne(tsk);
             return new JsonResult("Added successfully");      
@@ -38,8 +37,8 @@ namespace HexClanApplication.Api.Controllers
         [HttpDelete("{Id}")]
         public JsonResult Delete(String Id)
         {
-            TasksModel task;
-            task = _taskModelsCollection.Find<TasksModel>(ts => ts.TaskId == Id).FirstOrDefault();
+            Task task;
+            task = _taskModelsCollection.Find<Task>(ts => ts.TaskId == Id).FirstOrDefault();
             if(task != null)
             {
                 _taskModelsCollection.DeleteOne(a => a.TaskId == Id);
