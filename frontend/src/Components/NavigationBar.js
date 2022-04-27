@@ -55,6 +55,7 @@ const NavigationBar = () => {
 export default NavigationBar;
 
 const NavBarDiv = styled.div`
+    z-index: 999;
     height: 80px;
     left: 0;
     right: 0;

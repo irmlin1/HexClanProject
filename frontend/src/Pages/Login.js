@@ -55,16 +55,13 @@ export default function Login() {
             if(response.data.IsAuthenticated) {
                 // save access token and role to local storage
                 localStorage.setItem('JWT_ACCESS_TOKEN_HEX_CLAN', response.data.Token)
-
                 setIsAuthenticated(true);      
                 if(!userDetails) {
                     const user = jwt(response.data.Token);
                     setUserDetails({
-                        userName: user.sub,
                         email: user.email
                     })
                 }
-
                 //redirect to homepage
                 redirect()
             } else {

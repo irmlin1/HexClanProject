@@ -9,8 +9,7 @@ export default function AuthContextProvider({ children }) {
     const userThis = jwt(token);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userDetails, setUserDetails] = useState({
-        email: userThis.sub,
-        userName: userThis.email
+        email: userThis.email,
     })
 
     useEffect(() => {
@@ -23,7 +22,6 @@ export default function AuthContextProvider({ children }) {
             setIsAuthenticated(true);
         else
             setIsAuthenticated(false);
-        console.log(userDetails.userName, userDetails.email);
     };
 
     return (
