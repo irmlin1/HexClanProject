@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import AuthContext from "./Contexts/AuthContext";
+import UserList from "./Pages/UserList"
 import NavigationBar from './Components/NavigationBar';
 import PlaceHolder from './Pages/PlaceHolder';
 import BrowseTasks from './Pages/BrowseTasks';
@@ -29,6 +30,7 @@ ReactDOM.render(
                     <Route path="/tasks" element={<BrowseTasks/>}/>
                     <Route path="/rules" element={<PlaceHolder/>}/>
                     <Route path="/campaigns" element={<Campaigns/>} />
+                    <Route path="/users" element={<UserList/>} />
                 </Routes>
             </Router>
         </AuthContext>

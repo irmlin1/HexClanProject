@@ -74,7 +74,7 @@ namespace HexClanApplication.Api.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetUsers()
+        public Task<ResponseState> GetUsers()
         {
             return _userService.GetUsers();
         }

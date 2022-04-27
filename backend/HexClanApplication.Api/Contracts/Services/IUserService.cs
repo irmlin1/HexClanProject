@@ -8,7 +8,7 @@ namespace HexClanApplication.Api.Contracts.Services
     {
         Task<ResponseState> RegisterAsync(UserDto user);
         Task<ResponseState> CreateRoleAsync(UserRoleDto role);
-        JsonResult GetUsers();
+        Task<ResponseState> GetUsers();
         Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model);
     }
 }

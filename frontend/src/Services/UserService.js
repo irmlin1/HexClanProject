@@ -32,3 +32,12 @@ export const checkAuthStatus = async () => {
         return err.response;
     }
 };
+
+export const getUsers = async () => {
+    try {
+        return await AxiosInstance.get("/users");
+    } catch (err) {
+        console.error("Could not retrieve users", err.response);
+        return err.response;
+    }
+};
