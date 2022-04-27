@@ -3,6 +3,7 @@ import {AuthContext} from "../Contexts/AuthContext";
 import {CircularProgress} from "@mui/material";
 import * as React from 'react';
 import CreateCampaignDialog from "../Components/CreateCampaignDialog";
+import NavigationBar from "../Components/NavigationBar";
 
 
 export default function Campaigns()  {
@@ -18,10 +19,13 @@ export default function Campaigns()  {
         // if user is authenticated, the dashboard will load
         <CircularProgress />
     ) : (
-        <CreateCampaignDialog
-            dialogOpen={dialogOpen}
-            handleOpen={handleOpen}
-            handleClose={handleClose}
-        />
+        <div>
+            <NavigationBar/>
+            <CreateCampaignDialog
+                dialogOpen={dialogOpen}
+                handleOpen={handleOpen}
+                handleClose={handleClose}
+            />
+        </div>
     );
 }

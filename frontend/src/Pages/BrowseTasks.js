@@ -74,6 +74,5 @@ function getPageAmount(allTasks, perPage){ //Calculates page count
 
 const horizontalCenter = {
     display: "table",
-    margin: "0",
-    margin: "auto"
+    margin: "0 auto"
 }
