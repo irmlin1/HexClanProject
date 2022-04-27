@@ -5,59 +5,75 @@ import '../Styles/global.css';
 import NavigationBar from '../Components/NavigationBar';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import {getTasks} from '../Services/TasksService';
 
-const task={
-    question:"Būti ar nebūti",
-    options: ["Yeah", "No", "Maybe", "Who knows"],
-    correct: [false, false, true, true]
-};
-const allTask = [task, task, task, task, task, task, task];
-const difficultyOpts = ["Easy", "Medium", "Hard"];
-const topicOpts = ["algebra", "calculus", "imaginary numbers", "geometry"];
+const difficultyOpts = ["Easy", "Medium", "Hard"]; 
+const topicOpts = ["Biology", "Physics", "Mathematics", "Science", "Programming", "Algorithms", "Chemistry", "Politics"]; //Maciau sitiem enumai yra, dabar neisikeliau ju, paskui i juos pakeisiu
+const perPage = 5;
 
 export default function BrowseTasks(){
     const [page, setPage] = useState(1);
     const [pageTasks, setPageTasks] = useState([]);
-    const sliced = sliceArr(allTask);
+    const [allTasks, setTasks] = useState([]);
+    const [filtered, setFiltered] = useState([]);
+    const [pageAmount, setPageAmount] = useState(0);
 
     useEffect(() => {
-        setPageTasks(sliced[0]);
+        getTasks().then(res => setTasks(res.data)); //Retrieves all tasks from database
     }, [])
-    
+    useEffect(() => {
+        setPageTasks(getPageTasks(filtered, page, perPage)); //From filtered tasks get section of a page
+        setPageAmount(getPageAmount(filtered, perPage)); //Sets page count
+    }, [filtered]); //call whenever filtered is changed
 
     const handlePageChange = (event, value) => {
         setPage(value);
-        setPageTasks(sliced[value-1]);
+        setPageTasks(getPageTasks(allTasks, value, perPage)); //Changes section of a page
+    }
+
+    const filterTasks = (filteredTasks) => { //Method required to the filter
+        setFiltered(filteredTasks);
+        setPage(1);
     }
 
     return <div>
     <NavigationBar/>
-    <Filter difficultyOpts={difficultyOpts} topicOpts={topicOpts}/>
+    <Filter difficultyOpts={difficultyOpts} topicOpts={topicOpts} tasks={allTasks} filterSetter={filterTasks}/>
     {
-        pageTasks.length > 0 && pageTasks.map((t, ind) => <SolvableTask key={ind} question={t.question} options={t.options} correct={t.correct}/>)
+        pageTasks.length > 0 && pageTasks.map((t, ind) => {const {options, correct} = formTaskOptions(t) ;
+        return <SolvableTask key={ind} question={t.Question} options={options} correct={correct} />})
     }
-    <Stack spacing={2} style={pageStyle}>
-      <Pagination count={sliced.length} shape="rounded" onChange={handlePageChange} />
+    <Stack spacing={2} style={{...horizontalCenter, marginTop:"50px", marginBottom:"30px"}}>
+      <Pagination count={pageAmount} shape="rounded" onChange={handlePageChange} />
     </Stack>
     </div>
 }
 
-function sliceArr(arr){
-    const sliced = [];
-    let slInd = -1;
-    arr.map((el, ind) => {
-        if (ind % 5 == 0){
-            sliced.push([]);
-            slInd += 1;
-        }
-        sliced[slInd].push(el);
-    })
-    return sliced;
+function formTaskOptions(task){ //Just because it was more convenient(did it before knew structure), spliting answers into two arrays
+    let options = []
+    let correct = []
+    task.Answers.map(ans => {options.push(ans.Content); correct.push(ans.IsCorrect)});
+    return {options, correct};
+}
+
+function getPageTasks(tasks, page, perPage){ //Gives page section from all the tasks
+    const sInd = (page-1)*perPage;
+    const eInd = sInd+perPage;
+
+    return tasks.slice(sInd, eInd);
+}
+
+function getPageAmount(allTasks, perPage){ //Calculates page count
+    let amount = Math.floor(allTasks.length/perPage)
+    if (allTasks.length % perPage != 0){
+        amount = amount+1;
+    }
+    return amount;
 }
 
 
-const pageStyle = {
-    marginLeft:"39%",
-    marginTop:"30px",
-    marginBottom:"30px"
+const horizontalCenter = {
+    display: "table",
+    margin: "0",
+    margin: "auto"
 }

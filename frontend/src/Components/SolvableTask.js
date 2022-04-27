@@ -16,27 +16,24 @@ export default function SolvableTask(props) {
         let wrongs = 0;
         let corr = 0;
         let allCor = 0;
-        correct.map(cr => { if (cr) {allCor += 1}});
+        correct.map(cr => { if (cr) {allCor += 1}}); // counts how much should be checked
         
         checks.map((c, ind) => { 
-            if (c && correct[ind]){ // kiek pazymeta teisingai
+            if (c && correct[ind]){ // chose correctly
                 corr += 1;
             }
-            else if (!correct[ind] && c){ // kiek pasyemetu neteisingai
+            else if (!correct[ind] && c){ // chose wrongly
                 wrongs += 1;
             }
         } );
-        //console.log(allCor);
-        //console.log(corr);
-        //console.log(wrongs);
 
-        if (wrongs == 0 && allCor == corr){ // jei nei vienas nesuklystas ir visi pazymeti teisingai
+        if (wrongs == 0 && allCor == corr){ // didn't choose wrong and chose everything right
             alert("correct");
         }
-        else if (corr != 0){ // Jei bent vienas pazymetas teisingai
+        else if (corr != 0){ // otherwise if chose at least one correctly
             alert("partly correct");
         }
-        else{
+        else{ // chose all wrong/didn't chose at all when correct answer was present
             alert("wrong");
         }
     }
@@ -64,6 +61,6 @@ const TaskDiv = styled.div`
     width: 500px;
     padding: 25px;
     margin-top: 1%;
-    margin-left: 35%;
+    margin-left: 37.5%;
     display: inline-block;
 `;
