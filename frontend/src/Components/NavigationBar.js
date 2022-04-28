@@ -3,6 +3,7 @@ import { Link } from "@mui/material";
 import '../Styles/NavigationBar.css';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
+<<<<<<< Updated upstream
 import { routes } from '../index';
 
 const NavigationBar = (props) => {
@@ -25,6 +26,30 @@ const NavigationBar = (props) => {
 			}
 		}, [])
 
+=======
+import {AuthContext} from "../Contexts/AuthContext";
+import { routes } from '../index';
+
+const NavigationBar = () => {
+		const headerRef = React.useRef(null);
+		const location = useLocation();
+		const { isAuthenticated } = useContext(AuthContext);
+
+		React.useEffect(() => {
+			const scrollEvent = (event) => {
+				if(!headerRef?.current) return;
+				if(window.scrollY < 50) {
+					headerRef.current.style.opacity = `${1 - 1 / 500 * window.scrollY}`;
+				};
+			};
+
+			window.addEventListener('scroll', scrollEvent);
+			return () => {
+				window.removeEventListener('scroll', scrollEvent);
+			}
+		}, [])
+
+>>>>>>> Stashed changes
     return (
         <NavBarDiv ref={headerRef}>
             <div className="nav-content">

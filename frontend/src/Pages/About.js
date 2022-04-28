@@ -88,7 +88,11 @@ export default function About() {
 
             <RichTextEditor
 								className='rich-text-editor'
+<<<<<<< Updated upstream
                 isLoading={false}
+=======
+                isLoading={isLoading}
+>>>>>>> Stashed changes
                 readOnly={!isAdmin}
                 content={content}
                 setContent={setContent}

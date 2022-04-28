@@ -2,6 +2,10 @@ import React, {useContext, useEffect, useState} from "react";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
 import {Alert, Box, Button, Container, CssBaseline, Snackbar, TextField} from "@mui/material";
 
+<<<<<<< Updated upstream
+=======
+import {AuthContext} from "../Contexts/AuthContext";
+>>>>>>> Stashed changes
 import {useNavigate, Link} from "react-router-dom";
 import styled from "styled-components";
 
@@ -17,7 +21,11 @@ export default function Login(props) {
     const [snackText, setSnackText] = useState("");
 
     const navigate = useNavigate();
+<<<<<<< Updated upstream
     const { setIsAuthenticated } = useContext(authContext);
+=======
+    const { setIsAuthenticated } = useContext(AuthContext);
+>>>>>>> Stashed changes
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);

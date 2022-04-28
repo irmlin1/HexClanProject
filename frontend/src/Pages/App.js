@@ -5,7 +5,11 @@ import { CircularProgress } from '@mui/material';
 import { useContext } from 'react';
 
 function App(props) {
+<<<<<<< Updated upstream
 		const { Page, AuthContext } = props;
+=======
+		const { Page } = props;
+>>>>>>> Stashed changes
 
     const { isAuthenticated } = useContext(AuthContext);
 		console.log(window.location.href);

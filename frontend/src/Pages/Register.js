@@ -20,7 +20,10 @@ export default function Register() {
     const [passwordError, setPasswordError] = useState(false);
     const [snackOpen, setSnackOpen] = useState(false);
     const [snackText, setSnackText] = useState("");
+<<<<<<< Updated upstream
 		const [snackColor, setSnackColor] = useState("");
+=======
+>>>>>>> Stashed changes
 		const navigate = useNavigate();
 
     const handleEmailChange = (event) => {
@@ -75,6 +78,7 @@ export default function Register() {
     }, [password, passwordConfirm, firstName, lastName, email])
 
     const handleSubmit = async (event) => {
+<<<<<<< Updated upstream
         //const values = {
         //    firstName: firstName,
         //    lastName: lastName,
@@ -111,6 +115,40 @@ export default function Register() {
         //    setSnackColor("error");
         //    setSnackText("A server error has occurred.");
         //}
+=======
+        const user = {
+            firstName: firstName,
+            lastName: lastName,
+            userName: userName,
+            email: email,
+            password: password
+        };
+
+        event.preventDefault();
+
+        const response = await registerNewUser(user);
+        setSnackOpen(true);
+        console.log(response)
+        if(response) {
+            if(response.data.Success) {
+                setSnackText(response.data.Message)
+                setSnackColor("success");
+
+								navigate("/login");
+            } else {
+                setSnackColor("error");
+
+                if(response.data.Message) {
+                    setSnackText(response.data.Message);
+                } else if (response.data.Content) {
+                    setSnackText(response.data.Content[0].Description);
+                }
+            }
+        } else {
+            setSnackColor("error");
+            setSnackText("A server error has occurred.");
+        }
+>>>>>>> Stashed changes
     };
 
     return (
