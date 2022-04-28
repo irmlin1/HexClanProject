@@ -1,47 +1,63 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "@mui/material";
 import '../Styles/NavigationBar.css';
 import styled from 'styled-components';
+import { useLocation } from 'react-router-dom';
+import { routes } from '../index';
 
-const NavigationBar = () => {
+const NavigationBar = (props) => {
+		const { AuthContext } = props;
+		const headerRef = React.useRef(null);
+		const location = useLocation();
+		const { isAuthenticated } = useContext(AuthContext);
+
+		React.useEffect(() => {
+			const scrollEvent = (event) => {
+				if(!headerRef?.current) return;
+				if(window.scrollY < 50) {
+					headerRef.current.style.opacity = `${1 - 1 / 500 * window.scrollY}`;
+				};
+			};
+
+			window.addEventListener('scroll', scrollEvent);
+			return () => {
+				window.removeEventListener('scroll', scrollEvent);
+			}
+		}, [])
+
     return (
-        <NavBarDiv>
+        <NavBarDiv ref={headerRef}>
             <div className="nav-content">
                 <div className="icon-box">
                     <Link href="/">
                         <img alt="" src="/img/HexClanProject_icon.png" />
                     </Link>
                 </div>
-                <div className="nav-button">
-                    <Link href="/theory">
-                        Theory
-                    </Link>
-                </div>
-                <div className="nav-button">
-                    <Link href="/tasks">
-                        Tasks
-                    </Link>
-                </div>
-                <div className="nav-button">
-                    <Link href="/rules">
-                        Rules
-                    </Link>
-                </div>
-                <div className="nav-button">
-                    <Link href="/about">
-                        About
-                    </Link>
-                </div>
-                <div className="nav-button">
-                    <Link href="/register">
-                        Register
-                    </Link>
-                </div>
-                <div className="nav-button">
-                    <Link href="/login">
-                        Login
-                    </Link>
-                </div>
+								{
+									Object.entries(routes).map(m =>
+										<div className="nav-button">
+											<Link href={m[0]}>
+													{m[1].name}
+											</Link>
+										</div>
+									)
+								}
+                {
+									!isAuthenticated ?
+										<>
+											<div className="nav-button not-logged-in">
+													<Link href="/register">
+															Register
+													</Link>
+											</div>
+											<div className="nav-button not-logged-in">
+													<Link href="/login">
+															Login
+													</Link>
+											</div>
+										</>
+									: null
+								}
             </div>
         </NavBarDiv>
     )
@@ -77,7 +93,7 @@ const NavBarDiv = styled.div`
             align-items: center;
             height: 50%;
             padding: 0 20px;
-            :nth-last-child(2) {
+            &.not-logged-in {
                 margin-left: auto;
             }
             a {

@@ -7,7 +7,7 @@
   ----------------
 
   : # xx xx xx xx
-       rr gg bb aa
+      rr gg bb aa
 
   -------OR-------
 
@@ -22,7 +22,7 @@
 
 
 /*
- TODO: Add more colors which are necessary and remove the unused ones :TODO
+ TODO: Add more colors which are necessary and remove the unused ones
 */
 :root {
   --white-1: #ffffffff;

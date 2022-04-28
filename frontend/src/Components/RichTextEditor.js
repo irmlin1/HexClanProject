@@ -6,7 +6,7 @@ import EditIcon from "@mui/icons-material/Edit";
 
 
 export default function RichTextEditor(props) {
-    const { readOnly, content, setContent, editingMode, setEditingMode, handleButtonClick } = props;
+    const { readOnly, content, setContent, editingMode, setEditingMode, handleButtonClick, isLoading, className } = props;
     const editor = React.useRef(null);
 
     const [editorState, setEditorState] = useState(() =>
@@ -56,7 +56,7 @@ export default function RichTextEditor(props) {
     }
 
     return (
-        <div>
+        <div className={className}>
             <div className={"toolbar"}>
                 <div hidden={readOnly} className={"div-flex"}>
                     <div className={`${!editingMode ? "div-display-left" : ""}`}>

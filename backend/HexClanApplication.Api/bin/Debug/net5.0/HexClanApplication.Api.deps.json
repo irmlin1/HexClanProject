@@ -534,6 +534,14 @@
           "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+<<<<<<< Updated upstream
+=======
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+>>>>>>> Stashed changes
       "System.Security.AccessControl/5.0.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",

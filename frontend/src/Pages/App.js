@@ -1,16 +1,25 @@
 import '../Styles/App.css';
-import Dashboard from '../Components/Dashboard';
 import NavigationBar from '../Components/NavigationBar';
 import Footer from '../Components/Footer';
+import { CircularProgress } from '@mui/material';
+import { useContext } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <NavigationBar/>
-      <Dashboard/>
-      <Footer/>
-    </div>
-  );
+function App(props) {
+		const { Page, AuthContext } = props;
+
+    const { isAuthenticated } = useContext(AuthContext);
+		console.log(window.location.href);
+    return !isAuthenticated ? (
+			// wait until response comes back from the server
+			// if user is authenticated, the dashboard will load
+			<CircularProgress />
+    ) : (
+			<div className="App">
+				<NavigationBar/>
+				<Page/>
+				<Footer/>
+			</div>
+    );
 }
 
 export default App;

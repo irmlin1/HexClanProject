@@ -4,7 +4,7 @@ import {Editor, EditorState, RichUtils, convertToRaw, convertFromRaw} from 'draf
 import RichTextEditor from "../Components/RichTextEditor";
 import '../Styles/About.css';
 import {getAboutContent, updateAboutContent} from "../Services/AboutService";
-import NavigationBar from "../Components/NavigationBar";
+import styled from 'styled-components';
 
 export default function About() {
 
@@ -65,8 +65,8 @@ export default function About() {
     };
 
     return (
-        <Box>
-            <NavigationBar/>
+        <AboutStyle>
+					<Box>
             <Snackbar
                 anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
                 open={snackOpen}
@@ -87,6 +87,8 @@ export default function About() {
             </div>
 
             <RichTextEditor
+								className='rich-text-editor'
+                isLoading={false}
                 readOnly={!isAdmin}
                 content={content}
                 setContent={setContent}
@@ -94,6 +96,11 @@ export default function About() {
                 setEditingMode={setEditingMode}
                 handleButtonClick={handleButtonClick}
             />
-        </Box>
+        	</Box>
+				</AboutStyle>
     )
 }
+
+const AboutStyle = styled.div`
+	padding-top: var(--page-top-offset);
+`
