@@ -23,6 +23,11 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
+                    <Link href="/tasks">
+                        Tasks
+                    </Link>
+                </div>
+                <div className="nav-button">
                     <Link href="/rules">
                         Rules
                     </Link>

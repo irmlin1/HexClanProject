@@ -7,6 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import AuthContext from "./Contexts/AuthContext";
+import UserList from "./Pages/UserList"
+import NavigationBar from './Components/NavigationBar';
+import PlaceHolder from './Pages/PlaceHolder';
+import BrowseTasks from './Pages/BrowseTasks';
 
 import './Styles/index.css';
 import './Styles/colors.css';
@@ -21,10 +25,14 @@ ReactDOM.render(
                 <Routes>
                     <Route path="/" element={<App/>} />
                     <Route path="/register" element={<Register/>} />
-                    <Route path="/about" element={<About/>} />
                     <Route path="/login" element={<Login/>} />
+                    <Route path="/about" element={<About/>} />
+                    <Route path="/theory" element={<PlaceHolder/>}/>
+                    <Route path="/tasks" element={<BrowseTasks/>}/>
+                    <Route path="/rules" element={<PlaceHolder/>}/>
                     <Route path="/campaigns" element={<Campaigns/>} />
                     <Route path="/profile" element={<Profile/>} />
+                    <Route path="/users" element={<UserList/>} />
                 </Routes>
             </Router>
         </AuthContext>

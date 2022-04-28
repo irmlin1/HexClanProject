@@ -22,17 +22,29 @@ namespace HexClanApplication.Api.Services
         private UserManager<User> _userManager;
         private RoleManager<UserRole> _roleManager;
         private readonly Jwt _jwt;
+        private readonly IMongoCollection<User> _UserCollection;
 
-        public UserService(UserManager<User> userManager, RoleManager<UserRole> roleManager, IOptions<Jwt> jwt)
+        public UserService(UserManager<User> userManager, RoleManager<UserRole> roleManager, IOptions<Jwt> jwt, IMongoClient client)
         {
             this._userManager = userManager;
             this._roleManager = roleManager;
             _jwt = jwt.Value;
+
+
+            var database = client.GetDatabase("HexClanDatabase");
+            this._UserCollection = database.GetCollection<User>("Users");
         }
 
-        public JsonResult GetUsers()
+        public async Task<ResponseState> GetUsers()
         {
-            return new JsonResult("hello world");
+            var result = await _UserCollection.AsQueryable().ToListAsync();
+
+            return new ResponseState
+            {
+                Content = result,
+                Success = true,
+                Message = ""
+            };
         }
 
         public async Task<User> GetAsync(string email) =>

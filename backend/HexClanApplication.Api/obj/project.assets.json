@@ -1585,19 +1585,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\super\\.nuget\\packages\\": {}
+    "C:\\Users\\Vartotojas1\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Vartotojas1\\Desktop\\Programavimo inžinerija\\projektas1\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "projectName": "HexClanApplication.Api",
-      "projectPath": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
-      "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
+      "projectPath": "C:\\Users\\Vartotojas1\\Desktop\\Programavimo inžinerija\\projektas1\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "packagesPath": "C:\\Users\\Vartotojas1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vartotojas1\\Desktop\\Programavimo inžinerija\\projektas1\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vartotojas1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1662,7 +1667,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

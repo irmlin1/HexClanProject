@@ -12,4 +12,6 @@ namespace HexClanApplication.Api.Contracts.Models
         public bool IsCorrect { get; set; }
 
     }
+
 }
+
