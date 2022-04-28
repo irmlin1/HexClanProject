@@ -39,6 +39,11 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
+                    <Link href="/n/profile">
+                        Profile
+                    </Link>
+                </div>
+                <div className="nav-button">
                     <Link href="/register">
                         Register
                     </Link>
@@ -57,6 +62,7 @@ const NavigationBar = () => {
 export default NavigationBar;
 
 const NavBarDiv = styled.div`
+    z-index: 999;
     height: 80px;
     left: 0;
     right: 0;

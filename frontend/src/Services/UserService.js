@@ -33,6 +33,17 @@ export const checkAuthStatus = async () => {
     }
 };
 
+export const getUser = async (email) => {
+    try {
+        return await AxiosInstance.get("/users/"+email, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("JWT_ACCESS_TOKEN_HEX_CLAN")}`
+            }
+        })
+    } catch (err) {
+        console.error("Get user status request failed", err);
+      }
+    }
 export const getUsers = async () => {
     try {
         return await AxiosInstance.get("/users");

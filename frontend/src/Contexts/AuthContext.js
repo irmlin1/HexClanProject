@@ -1,10 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 import {checkAuthStatus} from "../Services/UserService";
+import jwt from 'jwt-decode'
 
 export const AuthContext = createContext(null);
 
 export default function AuthContextProvider({ children }) {
+    const token = localStorage.getItem('JWT_ACCESS_TOKEN_HEX_CLAN')
+    const userThis = jwt(token);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [userDetails, setUserDetails] = useState({
+        email: userThis.email,
+    })
 
     useEffect(() => {
         checkStatus();
@@ -20,7 +26,7 @@ export default function AuthContextProvider({ children }) {
 
     return (
         <AuthContext.Provider
-            value={{ isAuthenticated, setIsAuthenticated }}
+            value={{ isAuthenticated, setIsAuthenticated, userDetails, setUserDetails }}
         >
             {children}
         </AuthContext.Provider>

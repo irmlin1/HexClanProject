@@ -1,6 +1,5 @@
 import {Box, List, ListItem, ListItemButton, ListItemText} from "@mui/material";
 import React, {useEffect, useState} from "react";
-import NavigationBar from "../Components/NavigationBar";
 import {getUsers} from '../Services/UserService';
 import styled from 'styled-components';
 
@@ -22,7 +21,6 @@ export default function UserList() {
 
     return(
         <div>
-        <NavigationBar/>
 
         <List sx={{width: '30%', maxWidth: 360, bgcolor: 'background.paper', margin: 'auto'}}>
 

@@ -47,6 +47,9 @@ namespace HexClanApplication.Api.Services
             };
         }
 
+        public async Task<User> GetAsync(string email) =>
+        await _userManager.FindByEmailAsync(email);
+
         public async Task<ResponseState> RegisterAsync(UserDto user)
         {
             User appUser = new User
