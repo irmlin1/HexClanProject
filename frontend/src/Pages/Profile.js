@@ -4,7 +4,6 @@ import {AuthContext} from "../Contexts/AuthContext";
 import {getUser} from "../Services/UserService";
 import ProfileStyle from "../Styles/ProfileStyle/ProfileStyle";
 import styled from "styled-components";
-import NavigationBar from "../Components/NavigationBar";
 import Footer from "../Components/Footer";
 
 
@@ -45,8 +44,7 @@ export default function Profile()
 
 
     return (
-        <div>
-        <NavigationBar/>          
+        <div>         
         <ProfileDiv>
           <ProfileStyle
             fullName={getFullName}

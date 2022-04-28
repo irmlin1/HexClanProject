@@ -13,12 +13,12 @@ import PlaceHolder from './Pages/PlaceHolder';
 import BrowseTasks from './Pages/BrowseTasks';
 import BrowseCampaigns from './Pages/BrowseCampaigns';
 import SolveCampaign from './Pages/SolveCampaign';
+import Profile from './Pages/Profile';
 
 import './Styles/index.css';
 import './Styles/colors.css';
 import './Styles/global.css';
 import Campaigns from "./Pages/Campaigns";
-import Profile from './Pages/Profile';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -30,6 +30,8 @@ ReactDOM.render(
                         <Route path="theory" element={<PlaceHolder />} />
                         <Route path="rules" element={<PlaceHolder />} />
                         <Route path="campaigns" element={<Campaigns />} />
+                        <Route path="profile" element={<Profile/>} />
+                        <Route path="users" element={<UserList/>} />
                         <Route path="browsecampaigns" element={<BrowseCampaigns />} />
                         <Route path="solvecampaign" element={<SolveCampaign />} />
                     </Route>

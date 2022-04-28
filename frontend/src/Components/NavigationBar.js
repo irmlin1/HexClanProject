@@ -39,7 +39,7 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
-                    <Link href="/profile">
+                    <Link href="/n/profile">
                         Profile
                     </Link>
                 </div>
