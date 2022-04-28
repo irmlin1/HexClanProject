@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -10,6 +10,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 export default function SolvableTask(props) {
     const { question, options, correct } = props;
+
     const checks = [];
     options.map(e => checks.push(false));
     const handleClick = () => {
@@ -54,6 +55,15 @@ export default function SolvableTask(props) {
         </Button>
     </TaskDiv>
 }
+
+
+export function formTaskOptions(task){ //Just because it was more convenient(did it before knew structure), spliting answers into two arrays
+    let options = []
+    let correct = []
+    task.Answers.map(ans => {options.push(ans.Content); correct.push(ans.IsCorrect)});
+    return {options, correct};
+}
+
 
 const TaskDiv = styled.div`
     border-style: solid;

@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { Autocomplete, TextField, Button } from '@mui/material';
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
-import Stack from '@mui/material/Stack';
 
 export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter}) {
     const [diffChoices, setDiffChoices] = useState([]);
@@ -37,7 +36,7 @@ export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter})
             <Autocomplete //<= for difficulties
                 multiple
                 options={difficultyOpts}
-                sx={{ width: 450 }}
+                sx={{ width: 400 }}
                 renderInput={(params) => <TextField {...params} label="Difficulty" />}
                 onChange={
                     (event, value) => {
@@ -50,7 +49,7 @@ export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter})
             <Autocomplete //<= for topics
                 multiple
                 options={topicOpts}
-                sx={{ width: 450 }}
+                sx={{ width: 400 }}
                 renderInput={(params) => <TextField {...params} label="Topic" />}
                 onChange={
                     (event, value) => {

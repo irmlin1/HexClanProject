@@ -1,17 +1,16 @@
-import {useContext} from "react";
-import {AuthContext} from "../Contexts/AuthContext";
-import {CircularProgress} from "@mui/material";
+import { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthContext";
+import { CircularProgress } from "@mui/material";
 import * as React from 'react';
 import CreateCampaignDialog from "../Components/CreateCampaignDialog";
-import NavigationBar from "../Components/NavigationBar";
+import {Button} from '@mui/material';
+import { useNavigate  } from "react-router-dom";
 
-
-export default function Campaigns()  {
-
+export default function Campaigns() {
+    const navigate = useNavigate();
     const [dialogOpen, setDialogOpen] = React.useState(false);
     const handleOpen = () => setDialogOpen(true);
     const handleClose = () => setDialogOpen(false);
-
 
     const { isAuthenticated } = useContext(AuthContext);
     return !isAuthenticated ? (
@@ -20,12 +19,16 @@ export default function Campaigns()  {
         <CircularProgress />
     ) : (
         <div>
-            <NavigationBar/>
+            <div style={{paddingTop:"6%", paddingLeft:"40%"}}>
             <CreateCampaignDialog
                 dialogOpen={dialogOpen}
                 handleOpen={handleOpen}
                 handleClose={handleClose}
             />
+            <Button onClick={() => navigate("/n/browsecampaigns")} variant="contained" style={{marginTop:"1%"}}>Browse Campaigns</Button>
+            </div>
+            
         </div>
     );
 }
+//

@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import Filter from '../Components/Filter';
 import SolvableTask from '../Components/SolvableTask';
 import '../Styles/global.css';
-import NavigationBar from '../Components/NavigationBar';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import {getTasks} from '../Services/TasksService';
+import {formTaskOptions} from '../Components/SolvableTask'
+import NavigationBar from '../Components/NavigationBar';
 
 const difficultyOpts = ["Easy", "Medium", "Hard"]; 
 const topicOpts = ["Biology", "Physics", "Mathematics", "Science", "Programming", "Algorithms", "Chemistry", "Politics"]; //Maciau sitiem enumai yra, dabar neisikeliau ju, paskui i juos pakeisiu
@@ -23,7 +24,7 @@ export default function BrowseTasks(){
     }, [])
     useEffect(() => {
         setPageTasks(getPageTasks(filtered, page, perPage)); //From filtered tasks get section of a page
-        setPageAmount(getPageAmount(filtered, perPage)); //Sets page count
+        setPageAmount(getPageAmount(filtered, perPage)); //Sets page counta
     }, [filtered]); //call whenever filtered is changed
 
     const handlePageChange = (event, value) => {
@@ -37,7 +38,7 @@ export default function BrowseTasks(){
     }
 
     return <div>
-    <NavigationBar/>
+    <NavigationBar />
     <Filter difficultyOpts={difficultyOpts} topicOpts={topicOpts} tasks={allTasks} filterSetter={filterTasks}/>
     {
         pageTasks.length > 0 && pageTasks.map((t, ind) => {const {options, correct} = formTaskOptions(t) ;
@@ -47,13 +48,6 @@ export default function BrowseTasks(){
       <Pagination count={pageAmount} shape="rounded" onChange={handlePageChange} />
     </Stack>
     </div>
-}
-
-function formTaskOptions(task){ //Just because it was more convenient(did it before knew structure), spliting answers into two arrays
-    let options = []
-    let correct = []
-    task.Answers.map(ans => {options.push(ans.Content); correct.push(ans.IsCorrect)});
-    return {options, correct};
 }
 
 function getPageTasks(tasks, page, perPage){ //Gives page section from all the tasks
@@ -70,6 +64,7 @@ function getPageAmount(allTasks, perPage){ //Calculates page count
     }
     return amount;
 }
+
 
 
 const horizontalCenter = {
