@@ -11,6 +11,8 @@ import UserList from "./Pages/UserList"
 import NavigationBar from './Components/NavigationBar';
 import PlaceHolder from './Pages/PlaceHolder';
 import BrowseTasks from './Pages/BrowseTasks';
+import BrowseCampaigns from './Pages/BrowseCampaigns';
+import SolveCampaign from './Pages/SolveCampaign';
 
 import './Styles/index.css';
 import './Styles/colors.css';
@@ -23,16 +25,18 @@ ReactDOM.render(
         <AuthContext>
             <Router>
                 <Routes>
-                    <Route path="/" element={<App/>} />
-                    <Route path="/register" element={<Register/>} />
-                    <Route path="/login" element={<Login/>} />
-                    <Route path="/about" element={<About/>} />
-                    <Route path="/theory" element={<PlaceHolder/>}/>
-                    <Route path="/tasks" element={<BrowseTasks/>}/>
-                    <Route path="/rules" element={<PlaceHolder/>}/>
-                    <Route path="/campaigns" element={<Campaigns/>} />
-                    <Route path="/profile" element={<Profile/>} />
-                    <Route path="/users" element={<UserList/>} />
+                    <Route path="n" element={<NavigationBar />}>
+                        <Route path="about" element={<About />} />
+                        <Route path="theory" element={<PlaceHolder />} />
+                        <Route path="rules" element={<PlaceHolder />} />
+                        <Route path="campaigns" element={<Campaigns />} />
+                        <Route path="browsecampaigns" element={<BrowseCampaigns />} />
+                        <Route path="solvecampaign" element={<SolveCampaign />} />
+                    </Route>
+                    <Route path="/tasks" element={<BrowseTasks />} />
+                    <Route path="/" element={<App />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
                 </Routes>
             </Router>
         </AuthContext>

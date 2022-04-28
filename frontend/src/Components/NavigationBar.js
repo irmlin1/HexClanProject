@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "@mui/material";
 import '../Styles/NavigationBar.css';
 import styled from 'styled-components';
+import {Outlet} from 'react-router-dom';
 
 const NavigationBar = () => {
     return (
@@ -13,12 +14,12 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
-                    <Link href="/theory">
+                    <Link href="/n/theory">
                         Theory
                     </Link>
                 </div>
                 <div className="nav-button">
-                    <Link href="/campaigns">
+                    <Link href="/n/campaigns">
                         Campaigns
                     </Link>
                 </div>
@@ -28,12 +29,12 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
-                    <Link href="/rules">
+                    <Link href="/n/rules">
                         Rules
                     </Link>
                 </div>
                 <div className="nav-button">
-                    <Link href="/about">
+                    <Link href="/n/about">
                         About
                     </Link>
                 </div>
@@ -53,6 +54,7 @@ const NavigationBar = () => {
                     </Link>
                 </div>
             </div>
+            <Outlet />
         </NavBarDiv>
     )
 }

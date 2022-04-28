@@ -4,10 +4,8 @@ import {EditorState, convertToRaw, convertFromRaw} from 'draft-js';
 import RichTextEditor from "../Components/RichTextEditor";
 import '../Styles/About.css';
 import {getAboutContent, updateAboutContent} from "../Services/AboutService";
-import NavigationBar from "../Components/NavigationBar";
 
 export default function About() {
-
     const [content, setContent] = useState(EditorState.createEmpty());
     const [snackOpen, setSnackOpen] = useState(false);
     const [snackText, setSnackText] = useState("");
@@ -69,7 +67,6 @@ export default function About() {
 
     return (
         <Box>
-            <NavigationBar/>
             <Snackbar
                 anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
                 open={snackOpen}
