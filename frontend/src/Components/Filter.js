@@ -36,7 +36,7 @@ export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter})
             <Autocomplete //<= for difficulties
                 multiple
                 options={difficultyOpts}
-                sx={{ width: 400 }}
+                sx={{ width: 300 }}
                 renderInput={(params) => <TextField {...params} label="Difficulty" />}
                 onChange={
                     (event, value) => {
@@ -49,7 +49,7 @@ export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter})
             <Autocomplete //<= for topics
                 multiple
                 options={topicOpts}
-                sx={{ width: 400 }}
+                sx={{ width: 300 }}
                 renderInput={(params) => <TextField {...params} label="Topic" />}
                 onChange={
                     (event, value) => {
@@ -68,7 +68,7 @@ export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter})
 
 const FilterDiv = styled.div`
     padding-left: 24%;
-    padding-top: 5%;
+    padding-top: 7%;
     width: 70%;
     height: 130px;
 `;

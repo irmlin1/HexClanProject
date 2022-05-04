@@ -14,6 +14,7 @@ import BrowseTasks from './Pages/BrowseTasks';
 import BrowseCampaigns from './Pages/BrowseCampaigns';
 import SolveCampaign from './Pages/SolveCampaign';
 import Profile from './Pages/Profile';
+import Rules from './Pages/Rules';
 
 import './Styles/index.css';
 import './Styles/colors.css';
@@ -28,7 +29,7 @@ ReactDOM.render(
                     <Route path="n" element={<NavigationBar />}>
                         <Route path="about" element={<About />} />
                         <Route path="theory" element={<PlaceHolder />} />
-                        <Route path="rules" element={<PlaceHolder />} />
+                        <Route path="rules" element={<Rules />} />
                         <Route path="campaigns" element={<Campaigns />} />
                         <Route path="profile" element={<Profile/>} />
                         <Route path="users" element={<UserList/>} />
