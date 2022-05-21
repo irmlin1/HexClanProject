@@ -30,6 +30,7 @@ namespace HexClanApplication.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public JsonResult UpdateContent(AboutContent content)
         {
             return aboutContentService.UpdateContent(content);

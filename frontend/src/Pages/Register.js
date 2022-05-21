@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {Alert, Box, Button, Container, CssBaseline, Snackbar, TextField} from "@mui/material";
+import {Alert, Box, Button, Container, CssBaseline, Link, Snackbar, TextField} from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {registerNewUser} from "../Services/UserService";
+import {useNavigate} from "react-router-dom";
 
 const theme = createTheme();
 
@@ -19,6 +20,11 @@ export default function Register() {
     const [snackOpen, setSnackOpen] = useState(false);
     const [snackColor, setSnackColor] = useState("success");
     const [snackText, setSnackText] = useState("");
+
+    const navigate = useNavigate();
+    const redirect = () => {
+        navigate("/login");
+    };
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -89,6 +95,7 @@ export default function Register() {
             if(response.data.Success) {
                 setSnackText(response.data.Message)
                 setSnackColor("success")
+                redirect()
             } else {
                 setSnackColor("error")
 
@@ -211,6 +218,12 @@ export default function Register() {
                         >
                             Register
                         </Button>
+                        <div style={{textAlign:"center"}}>
+                            {"Already have an account? Login "}
+                            <Link href="/login">
+                                here
+                            </Link>
+                        </div>
                     </Box>
                 </Box>
             </Container>

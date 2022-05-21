@@ -10,6 +10,8 @@ export default function AuthContextProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userDetails, setUserDetails] = useState({
         email: userThis.email,
+        userName: userThis.sub,
+        roles: userThis.roles
     })
 
     useEffect(() => {

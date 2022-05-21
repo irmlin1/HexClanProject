@@ -46,9 +46,39 @@ export const getUser = async (email) => {
     }
 export const getUsers = async () => {
     try {
-        return await AxiosInstance.get("/users");
+        return await AxiosInstance.get("/users", {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("JWT_ACCESS_TOKEN_HEX_CLAN")}`
+            }
+        });
     } catch (err) {
         console.error("Could not retrieve users", err.response);
+        return err.response;
+    }
+};
+
+export const getUserRoles = async (email) => {
+    try {
+        return await AxiosInstance.get("/users/role/" + email, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("JWT_ACCESS_TOKEN_HEX_CLAN")}`
+            }
+        });
+    } catch (err) {
+        console.error("Could not retrieve user roles", err.response);
+        return err.response;
+    }
+};
+
+export const updateUserRoles = async (email, newRoles) => {
+    try {
+        return await AxiosInstance.post("/users/role/edit/" + email, newRoles, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("JWT_ACCESS_TOKEN_HEX_CLAN")}`
+            }
+        });
+    } catch (err) {
+        console.error("Could not update user roles", err.response);
         return err.response;
     }
 };

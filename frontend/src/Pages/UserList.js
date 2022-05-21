@@ -1,16 +1,65 @@
-import {Box, List, ListItem, ListItemButton, ListItemText} from "@mui/material";
-import React, {useEffect, useState} from "react";
+import {
+    IconButton,
+    Paper,
+    Table, TableBody, TableCell, tableCellClasses,
+    TableContainer,
+    TableHead, TableRow
+} from "@mui/material";
+import React, {useContext, useEffect, useState} from "react";
 import {getUsers} from '../Services/UserService';
-import styled from 'styled-components';
+import { styled } from '@mui/material/styles';
+import InfoIcon from '@mui/icons-material/Info';
+import SettingsIcon from '@mui/icons-material/Settings';
+import {AuthContext} from "../Contexts/AuthContext";
+import {Roles} from "../Enums/RoleEnums";
+import UserSettingsDialog from "../Components/UserSettingsDialog";
 
 
 export default function UserList() {
 
     const [allUsers, setUsers] = useState([]);
+    const [settingsOpen, setSettingsOpen] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
+
+    const handleOpen = (user) => {
+        setSelectedUser(user)
+        setSettingsOpen(true);
+    }
+    const handleClose = () => setSettingsOpen(false);
+
+    const { userDetails } = useContext(AuthContext);
+    const isAdmin = userDetails.roles.includes(Roles.ADMIN);
+
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+            backgroundColor: theme.palette.common.black,
+            color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+            fontSize: 14,
+            width:"100%"
+        },
+    }));
+
+    const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(odd)': {
+            backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        '&:last-child td, &:last-child th': {
+            border: 0,
+        },
+    }));
+
+    const tableStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    };
 
     const fetchUsers = async () => {
         const response = await getUsers();
-        if(response.status === 200) {
+        if(response.data.Success === true) {
             setUsers(response.data.Content)
         }
     }
@@ -20,20 +69,48 @@ export default function UserList() {
     }, [])
 
     return(
-        <div>
+        <>
+            <TableContainer  style={tableStyle}>
+                <Table sx={{ width: "50%"}}>
+                    <TableHead>
+                        <TableRow>
+                            <StyledTableCell colSpan={isAdmin? 3 : 2}>Username</StyledTableCell>
+                        </TableRow>
+                    </TableHead>
+                    <div style={{maxHeight:500}}>
+                        <TableBody>
+                            {allUsers.map((user, i) =>
+                                <StyledTableRow
+                                    key={i}
+                                >
+                                    <StyledTableCell>
+                                        {user.UserName}
+                                    </StyledTableCell>
+                                    <StyledTableCell>
+                                        <IconButton>
+                                            <InfoIcon/>
+                                        </IconButton>
+                                    </StyledTableCell>
+                                    {
+                                        isAdmin &&
+                                        <StyledTableCell>
+                                            <IconButton onClick={e => handleOpen(user)}>
+                                                <SettingsIcon/>
+                                            </IconButton>
+                                        </StyledTableCell>
+                                    }
+                                </StyledTableRow>
+                            )}
+                        </TableBody>
+                    </div>
+                </Table>
+            </TableContainer>
 
-        <List sx={{width: '30%', maxWidth: 360, bgcolor: 'background.paper', margin: 'auto'}}>
-
-        {allUsers.map((user, i) =>
-            <ListItem key={i} disablePadding>
-                <ListItemButton>
-                    <ListItemText primary={user.UserName} />
-                </ListItemButton>
-            </ListItem>
-        )} 
-            
-        </List> 
-
-        </div>
+            <UserSettingsDialog
+                dialogOpen={settingsOpen}
+                handleClose={handleClose}
+                user={selectedUser}
+            />
+        </>
     )
 }

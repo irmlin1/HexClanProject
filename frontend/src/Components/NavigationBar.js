@@ -1,10 +1,32 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { Link } from "@mui/material";
 import '../Styles/NavigationBar.css';
 import styled from 'styled-components';
 import {Outlet} from 'react-router-dom';
+import {AuthContext} from "../Contexts/AuthContext";
 
 const NavigationBar = () => {
+
+    const { userDetails } = useContext(AuthContext)
+    const [welcomeString, setWelcomeString] = useState("")
+    const [rolesString, setRolesString] = useState("")
+
+    useEffect(() => {
+        if(userDetails !== null) {
+            setWelcomeString("Welcome, " + userDetails.userName + "!")
+            let text = "Roles: "
+            if(!Array.isArray(userDetails.roles)) {
+                text += userDetails.roles
+                setRolesString(text)
+            }
+            else {
+                for(let i = 0; i < userDetails.roles.length; i++)
+                    text += userDetails.roles[i] + ", "
+                setRolesString(text.substr(0, text.length - 2))
+            }
+        }
+    }, [userDetails])
+
     return (
         <NavBarDiv>
             <div className="nav-content">
@@ -44,14 +66,24 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
-                    <Link href="/register">
-                        Register
+                    <Link href="/n/users">
+                        Users
                     </Link>
                 </div>
-                <div className="nav-button">
-                    <Link href="/login">
-                        Login
-                    </Link>
+                <div style={{marginLeft:"auto", display:"flex"}}>
+                    <div>
+                        <div>
+                            {welcomeString}
+                        </div>
+                        <div>
+                            {rolesString}
+                        </div>
+                    </div>
+                    <div className="nav-button">
+                        {/*<Link href="/n/users">*/}
+                        Logout
+                        {/*</Link>*/}
+                    </div>
                 </div>
             </div>
             <Outlet />
@@ -90,9 +122,9 @@ const NavBarDiv = styled.div`
             align-items: center;
             height: 50%;
             padding: 0 20px;
-            :nth-last-child(2) {
-                margin-left: auto;
-            }
+            // :nth-last-child(2) {
+            //     margin-left: auto;
+            // }
             a {
                 text-decoration: none;
                 color: var(--black-1);
