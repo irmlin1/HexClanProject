@@ -53,7 +53,7 @@ namespace HexClanApplication.Api.Services
         public async Task<ResponseState> GetUserRolesAsync(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
-
+            
             if(user == null)
             {
                 return new ResponseState

@@ -90,7 +90,6 @@ export default function Register() {
 
         const response = await registerNewUser(user);
         setSnackOpen(true);
-        console.log(response)
         if(response) {
             if(response.data.Success) {
                 setSnackText(response.data.Message)
@@ -192,6 +191,7 @@ export default function Register() {
                             fullWidth
                             name="password"
                             label="Password"
+                            type="password"
                             id="password"
                             onChange={handlePasswordChange}
                             value={password}

@@ -1,4 +1,5 @@
 import {
+    CircularProgress,
     IconButton,
     Paper,
     Table, TableBody, TableCell, tableCellClasses,
@@ -27,8 +28,8 @@ export default function UserList() {
     }
     const handleClose = () => setSettingsOpen(false);
 
-    const { userDetails } = useContext(AuthContext);
-    const isAdmin = userDetails.roles.includes(Roles.ADMIN);
+    const { userDetails, isAuthenticated } = useContext(AuthContext);
+    const isAdmin = userDetails === null ? false : userDetails.roles.includes(Roles.ADMIN);
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -68,7 +69,7 @@ export default function UserList() {
         fetchUsers();
     }, [])
 
-    return(
+    return !isAuthenticated ? <CircularProgress/> : (
         <>
             <TableContainer  style={tableStyle}>
                 <Table sx={{ width: "50%"}}>

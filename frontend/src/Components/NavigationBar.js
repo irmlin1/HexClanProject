@@ -1,13 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react'
-import { Link } from "@mui/material";
+import {CircularProgress, Link} from "@mui/material";
 import '../Styles/NavigationBar.css';
 import styled from 'styled-components';
-import {Outlet} from 'react-router-dom';
+import {Outlet, useNavigate} from 'react-router-dom';
 import {AuthContext} from "../Contexts/AuthContext";
 
 const NavigationBar = () => {
 
-    const { userDetails } = useContext(AuthContext)
+    const { userDetails, setUserDetails, isAuthenticated } = useContext(AuthContext)
     const [welcomeString, setWelcomeString] = useState("")
     const [rolesString, setRolesString] = useState("")
 
@@ -27,7 +27,19 @@ const NavigationBar = () => {
         }
     }, [userDetails])
 
-    return (
+
+    const navigate = useNavigate();
+    const redirect = () => {
+        navigate("/login");
+    };
+
+    const logout = (event) => {
+        localStorage.removeItem('JWT_ACCESS_TOKEN_HEX_CLAN')
+        setUserDetails(null)
+        redirect()
+    }
+
+    return !isAuthenticated ? <CircularProgress/> : (
         <NavBarDiv>
             <div className="nav-content">
                 <div className="icon-box">
@@ -79,11 +91,9 @@ const NavigationBar = () => {
                             {rolesString}
                         </div>
                     </div>
-                    <div className="nav-button">
-                        {/*<Link href="/n/users">*/}
+                    <button onClick={e => logout(e)} className="logout-button">
                         Logout
-                        {/*</Link>*/}
-                    </div>
+                    </button>
                 </div>
             </div>
             <Outlet />
@@ -129,6 +139,13 @@ const NavBarDiv = styled.div`
                 text-decoration: none;
                 color: var(--black-1);
             }
+        }
+        .logout-button {
+            border:none;
+            background-color:white;
+            cursor:pointer;
+            padding: 0 20px;
+            font-size:16px
         }
     }
 `;
