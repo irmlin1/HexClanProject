@@ -5,11 +5,12 @@ import {getUser} from "../Services/UserService";
 import ProfileStyle from "../Styles/ProfileStyle/ProfileStyle";
 import styled from "styled-components";
 import Footer from "../Components/Footer";
+import {CircularProgress} from "@mui/material";
 
 
 export default function Profile()
 {  
-    const { userDetails } = useContext(AuthContext);
+    const { userDetails, isAuthenticated } = useContext(AuthContext);
     const [getUserName, setUserName] = useState("");
     const [getEmail, setEmail] = useState("");
     const [getFullName, setFullanme] = useState("");
@@ -43,7 +44,7 @@ export default function Profile()
     background-size: cover`
 
 
-    return (
+    return !isAuthenticated ? <CircularProgress/> : (
         <div>         
         <ProfileDiv>
           <ProfileStyle

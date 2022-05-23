@@ -1,11 +1,45 @@
-import React from 'react'
-import { Link } from "@mui/material";
+import React, {useContext, useEffect, useState} from 'react'
+import {CircularProgress, Link} from "@mui/material";
 import '../Styles/NavigationBar.css';
 import styled from 'styled-components';
-import {Outlet} from 'react-router-dom';
+import {Outlet, useNavigate} from 'react-router-dom';
+import {AuthContext} from "../Contexts/AuthContext";
 
 const NavigationBar = () => {
-    return (
+
+    const { userDetails, setUserDetails, isAuthenticated } = useContext(AuthContext)
+    const [welcomeString, setWelcomeString] = useState("")
+    const [rolesString, setRolesString] = useState("")
+
+    useEffect(() => {
+        if(userDetails !== null) {
+            setWelcomeString("Welcome, " + userDetails.userName + "!")
+            let text = "Roles: "
+            if(!Array.isArray(userDetails.roles)) {
+                text += userDetails.roles
+                setRolesString(text)
+            }
+            else {
+                for(let i = 0; i < userDetails.roles.length; i++)
+                    text += userDetails.roles[i] + ", "
+                setRolesString(text.substr(0, text.length - 2))
+            }
+        }
+    }, [userDetails])
+
+
+    const navigate = useNavigate();
+    const redirect = () => {
+        navigate("/login");
+    };
+
+    const logout = (event) => {
+        localStorage.removeItem('JWT_ACCESS_TOKEN_HEX_CLAN')
+        setUserDetails(null)
+        redirect()
+    }
+
+    return !isAuthenticated ? <CircularProgress/> : (
         <NavBarDiv>
             <div className="nav-content">
                 <div className="icon-box">
@@ -44,14 +78,22 @@ const NavigationBar = () => {
                     </Link>
                 </div>
                 <div className="nav-button">
-                    <Link href="/register">
-                        Register
+                    <Link href="/n/users">
+                        Users
                     </Link>
                 </div>
-                <div className="nav-button">
-                    <Link href="/login">
-                        Login
-                    </Link>
+                <div style={{marginLeft:"auto", display:"flex"}}>
+                    <div>
+                        <div>
+                            {welcomeString}
+                        </div>
+                        <div>
+                            {rolesString}
+                        </div>
+                    </div>
+                    <button onClick={e => logout(e)} className="logout-button">
+                        Logout
+                    </button>
                 </div>
             </div>
             <Outlet />
@@ -90,13 +132,20 @@ const NavBarDiv = styled.div`
             align-items: center;
             height: 50%;
             padding: 0 20px;
-            :nth-last-child(2) {
-                margin-left: auto;
-            }
+            // :nth-last-child(2) {
+            //     margin-left: auto;
+            // }
             a {
                 text-decoration: none;
                 color: var(--black-1);
             }
+        }
+        .logout-button {
+            border:none;
+            background-color:white;
+            cursor:pointer;
+            padding: 0 20px;
+            font-size:16px
         }
     }
 `;

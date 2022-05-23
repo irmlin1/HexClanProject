@@ -47,8 +47,45 @@ namespace HexClanApplication.Api.Services
             };
         }
 
-        public async Task<User> GetAsync(string email) =>
+        public async Task<User> GetUserAsync(string email) =>
         await _userManager.FindByEmailAsync(email);
+
+        public async Task<ResponseState> GetUserRolesAsync(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            
+            if(user == null)
+            {
+                return new ResponseState
+                {
+                    Content = null,
+                    Success = false,
+                    Message = ""
+                };
+            }
+
+            var userRoleIds = user.Roles;
+            var allRoles = _roleManager.Roles;
+            List<UserRoleResponseDto> userRoles = new List<UserRoleResponseDto>();
+            foreach (var roleId in userRoleIds)
+            {
+                foreach(var role in allRoles)
+                {
+                    if(roleId == role.Id)
+                    {
+                        userRoles.Add(new UserRoleResponseDto { RoleId = roleId, RoleName = role.Name });
+                        break;
+                    }
+                }
+            }
+
+            return new ResponseState
+            {
+                Content = userRoles,
+                Success = true,
+                Message = ""
+            };
+        }
 
         public async Task<ResponseState> RegisterAsync(UserDto user)
         {
@@ -96,6 +133,7 @@ namespace HexClanApplication.Api.Services
 
         }
 
+
         public async Task<ResponseState> CreateRoleAsync(UserRoleDto role)
         {
             UserRole appRole= new UserRole
@@ -131,6 +169,54 @@ namespace HexClanApplication.Api.Services
             {
                 Success = true,
                 Message = $"Role {role.RoleName} successfully added!",
+                Content = null
+            };
+        }
+
+        public async Task<ResponseState> UpdateRoleAsync(string email, List<string> newRoles)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if(user == null)
+            {
+                return new ResponseState
+                {
+                    Success = false,
+                    Message = $"User with email {email} does not exist!",
+                    Content = null
+                };
+            }
+            var currentRoles =  await _userManager.GetRolesAsync(user);
+
+            // add roles
+
+            foreach(string role in newRoles)
+            {
+                if (!currentRoles.Contains(role))
+                    await _userManager.AddToRoleAsync(user, role);
+            }
+
+            // remove roles
+            foreach(var role in currentRoles)
+            {
+                bool found = false;
+                foreach(string newRole in newRoles)
+                {
+                    if(newRole== role)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if(!found)
+                {
+                    await _userManager.RemoveFromRoleAsync(user, role);
+                }
+            }
+
+            return new ResponseState
+            {
+                Success = true,
+                Message = "Updated roles successfully! User will have to relogin to see the changes.",
                 Content = null
             };
         }

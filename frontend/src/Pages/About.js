@@ -1,9 +1,11 @@
-import {Alert, Box, Snackbar} from "@mui/material";
-import React, {useState, useEffect} from "react";
+import {Alert, Box, CircularProgress, Snackbar} from "@mui/material";
+import React, {useState, useEffect, useContext} from "react";
 import {EditorState, convertToRaw, convertFromRaw} from 'draft-js';
 import RichTextEditor from "../Components/RichTextEditor";
 import '../Styles/About.css';
 import {getAboutContent, updateAboutContent} from "../Services/AboutService";
+import {AuthContext} from "../Contexts/AuthContext";
+import {Roles} from "../Enums/RoleEnums";
 
 export default function About() {
     const [content, setContent] = useState(EditorState.createEmpty());
@@ -14,7 +16,9 @@ export default function About() {
     const [isLoading, setIsLoading] = useState(true);
 
     // Allow to edit text only for admins/mods, for users - readonly mode
-    const isAdmin = true;
+
+    const {userDetails, isAuthenticated} = useContext(AuthContext)
+    const isAdmin = userDetails === null ? false : userDetails.roles.includes(Roles.ADMIN)
 
     const snackOnClose = () => {
         setSnackOpen(false);
@@ -57,7 +61,6 @@ export default function About() {
             } else {
                 setSnackColor("error");
                 setSnackText("Update failed")
-                console.log(response)
             }
         } else {
             setSnackColor("error");
@@ -65,7 +68,8 @@ export default function About() {
         }
     };
 
-    return (
+    return !isAuthenticated ? (<CircularProgress />) :  (
+
         <Box>
             <Snackbar
                 anchorOrigin={{ horizontal: "center", vertical: "bottom" }}

@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import {login} from "../Services/UserService";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-import {Alert, Box, Button, Container, CssBaseline, Snackbar, TextField} from "@mui/material";
+import {Alert, Box, Button, Container, CssBaseline, Link, Snackbar, TextField} from "@mui/material";
 
 import {AuthContext} from "../Contexts/AuthContext";
 import {useNavigate} from "react-router-dom";
@@ -56,12 +56,14 @@ export default function Login() {
                 // save access token and role to local storage
                 localStorage.setItem('JWT_ACCESS_TOKEN_HEX_CLAN', response.data.Token)
                 setIsAuthenticated(true);      
-                if(!userDetails) {
-                    const user = jwt(response.data.Token);
-                    setUserDetails({
-                        email: user.email
-                    })
-                }
+
+                const user = jwt(response.data.Token);
+                setUserDetails({
+                    email: user.email,
+                    userName: user.sub,
+                    roles: user.roles
+                })
+
                 //redirect to homepage
                 redirect()
             } else {
@@ -125,6 +127,7 @@ export default function Login() {
                             required
                             fullWidth
                             name="password"
+                            type={"password"}
                             label="Password"
                             id="password"
                             onChange={handlePasswordChange}
@@ -139,6 +142,12 @@ export default function Login() {
                         >
                             Login
                         </Button>
+                        <div style={{textAlign:"center"}}>
+                            {"Create an account "}
+                            <Link href="/register">
+                                here
+                            </Link>
+                        </div>
                     </Box>
                 </Box>
             </Container>
