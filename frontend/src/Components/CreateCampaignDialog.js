@@ -230,6 +230,7 @@ export default function CreateCampaignDialog(props) {
         event.preventDefault();
 
         const valid = validate();
+
         if(!valid.validated){
             setSnackOpen(true);
             setSnackColor("error")
@@ -240,7 +241,6 @@ export default function CreateCampaignDialog(props) {
         const response = await createNewCampaign(campaign);
 
         setSnackOpen(true);
-        console.log(response)
         if(response) {
             if(response.data.Success) {
                 setSnackText(response.data.Message)
@@ -260,20 +260,6 @@ export default function CreateCampaignDialog(props) {
 
     return (
         <div>
-            <Snackbar
-                anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
-                open={snackOpen}
-                autoHideDuration={4000}
-                onClose={() => setSnackOpen(false)}
-            >
-                <Alert
-                    onClose={() => setSnackOpen(false)}
-                    severity={snackColor}
-                    sx={{ width: "100%" }}
-                >
-                    {snackText}
-                </Alert>
-            </Snackbar>
             <Button onClick={handleOpen} variant="contained">Add Campaign</Button>
             <Dialog
                 fullWidth
@@ -283,6 +269,20 @@ export default function CreateCampaignDialog(props) {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
+                <Snackbar
+                    anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
+                    open={snackOpen}
+                    autoHideDuration={4000}
+                    onClose={() => setSnackOpen(false)}
+                >
+                    <Alert
+                        onClose={() => setSnackOpen(false)}
+                        severity={snackColor}
+                        sx={{ width: "100%" }}
+                    >
+                        {snackText}
+                    </Alert>
+                </Snackbar>
                 <DialogContent style={{ overflowY: "scroll" }}>
                     <FormSection title={"General"}>
                         <TextField
