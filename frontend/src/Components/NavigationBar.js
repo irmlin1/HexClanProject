@@ -82,6 +82,11 @@ const NavigationBar = () => {
                         Users
                     </Link>
                 </div>
+                <div className="nav-button">
+                    <Link href="/n/tutorial">
+                        Tutorial
+                    </Link>
+                </div>
                 <div style={{marginLeft:"auto", display:"flex"}}>
                     <div>
                         <div>

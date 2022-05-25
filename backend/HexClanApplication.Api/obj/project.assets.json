@@ -1585,12 +1585,17 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\irman\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+=======
+    "C:\\Users\\super\\.nuget\\packages\\": {}
+>>>>>>> d1258ed304bdc46312aae9810520a9279891c15d
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
       "projectName": "HexClanApplication.Api",
       "projectPath": "C:\\Users\\irman\\OneDrive\\Stalinis kompiuteris\\4 semestras\\programavimo inzinerija\\projektas\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
@@ -1602,6 +1607,16 @@
       ],
       "configFilePaths": [
         "C:\\Users\\irman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "projectName": "HexClanApplication.Api",
+      "projectPath": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClanProject\\backend\\HexClanApplication.Api\\HexClanApplication.Api.csproj",
+      "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\super\\OneDrive\\Desktop\\Antri Metai\\HexClanProject\\backend\\HexClanApplication.Api\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> d1258ed304bdc46312aae9810520a9279891c15d
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1666,7 +1681,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+>>>>>>> d1258ed304bdc46312aae9810520a9279891c15d
       }
     }
   }
