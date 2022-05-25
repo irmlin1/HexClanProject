@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
     Box,
-    Dialog, DialogActions,
+    Dialog,
     DialogContent,
 } from "@mui/material";
 import {getUserRoles} from "../Services/UserService";
@@ -37,12 +37,11 @@ export default function UserPopUpDialog(props) {
                     onClose={handleClose}>
                     <DialogContent>
                         <Box>
-                            <h1>Username: {user.UserName}</h1>
-                            <h1>Email: {user.Email}</h1>
-                            <h1>Username: {user.UserName}</h1>
-                            <h1>First Name: {user.firstName}</h1>
-                            <h1>Last Name: {user.lastName}</h1>
-                            <h1>Roles:{roleString}</h1>
+                            <h1>Username:    {user.UserName}</h1>
+                            <h1>First Name:  {user.firstName}</h1>
+                            <h1>Last Name:   {user.lastName}</h1>
+                            <h1>Email:       {user.Email}</h1>
+                            <h1>Roles:       {roleString}</h1>
                         </Box>
                     </DialogContent>
                 </Dialog>
