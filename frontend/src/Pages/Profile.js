@@ -18,16 +18,18 @@ export default function Profile()
     
     const fetchContent = async () => {
 
-        const response = await getUser(userDetails.email);      
-        const content = response.data;
-        setUserName(content.UserName);
-        setEmail(content.Email)
-        setFullanme(content.firstName+" "+content.lastName);
+        if(userDetails !== null) {
+            const response = await getUser(userDetails.email);
+            const content = response.data;
+            setUserName(content.UserName);
+            setEmail(content.Email)
+            setFullanme(content.firstName+" "+content.lastName);
+        }
     }
 
     useEffect(() => {
         fetchContent();
-    }, [])
+    }, [userDetails])
 
     const ProfileDiv = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');

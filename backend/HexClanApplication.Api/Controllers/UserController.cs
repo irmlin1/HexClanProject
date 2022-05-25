@@ -71,7 +71,6 @@ namespace HexClanApplication.Api.Controllers
         }
 
         [HttpGet("role/{email}")]
-        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> GetUserRolesAsync(string email)
         {
             if (email == null)
