@@ -13,7 +13,7 @@ export default function Tutorial()
     `
     return (
         <TutorialDiv>
-        <img src= {TutorialPic} />
+        <img src= {TutorialPic} width= {"40%"} />
         </TutorialDiv>
         );
 }
