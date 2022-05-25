@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MongoDB.Driver;
 using HexClanApplication.Api.Contracts.Models;
+using System.Threading.Tasks;
 
 namespace HexClanApplication.Api.Controllers
 {
@@ -13,11 +14,11 @@ namespace HexClanApplication.Api.Controllers
     [Route("api/[controller]")]
     public class TasksController : ControllerBase
     {
-        private readonly IMongoCollection<Task> _taskModelsCollection;
+        private readonly IMongoCollection<Task_> _taskModelsCollection;
         public TasksController(IMongoClient client)
         {
             var database = client.GetDatabase("HexClanDatabase");
-            _taskModelsCollection = database.GetCollection<Task>("Tasks");
+            _taskModelsCollection = database.GetCollection<Task_>("Tasks");
         }
 
         [HttpGet]
@@ -27,18 +28,27 @@ namespace HexClanApplication.Api.Controllers
             return new JsonResult(dblist);
         }
         [HttpPost]
-        public JsonResult Post(Task tsk)
+        public async Task<ActionResult> AddTask(Task_ tsk)
         {
-            _taskModelsCollection.InsertOne(tsk);
-            return new JsonResult("Added successfully");      
+            if (tsk == null)
+                return BadRequest();
+
+            await _taskModelsCollection.InsertOneAsync(tsk);
+
+            return Ok(new ResponseState
+            {
+                Content = null,
+                Success = true,
+                Message = "Task added successfully"
+            });  
         }
         
         // Delete metode tiesiog prie viso api pridėkite id skaičiuką ir ištrins jį.
         [HttpDelete("{Id}")]
         public JsonResult Delete(String Id)
         {
-            Task task;
-            task = _taskModelsCollection.Find<Task>(ts => ts.TaskId == Id).FirstOrDefault();
+            Task_ task;
+            task = _taskModelsCollection.Find<Task_>(ts => ts.TaskId == Id).FirstOrDefault();
             if(task != null)
             {
                 _taskModelsCollection.DeleteOne(a => a.TaskId == Id);

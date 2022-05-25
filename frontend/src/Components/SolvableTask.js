@@ -11,8 +11,13 @@ import CloseIcon from '@mui/icons-material/Close';
 export default function SolvableTask(props) {
     const { question, options, correct } = props;
 
-    const checks = [];
-    options.map(e => checks.push(false));
+    const [checks, setChecks] = useState(new Array(options.length).fill(false));
+
+
+    useEffect(() => {
+        setChecks(new Array(options.length).fill(false));
+    }, [options])
+
     const handleClick = () => {
         let wrongs = 0;
         let corr = 0;
@@ -28,10 +33,10 @@ export default function SolvableTask(props) {
             }
         } );
 
-        if (wrongs == 0 && allCor == corr){ // didn't choose wrong and chose everything right
+        if (wrongs === 0 && allCor === corr){ // didn't choose wrong and chose everything right
             alert("correct");
         }
-        else if (corr != 0){ // otherwise if chose at least one correctly
+        else if (corr !== 0){ // otherwise if chose at least one correctly
             alert("partly correct");
         }
         else{ // chose all wrong/didn't chose at all when correct answer was present
@@ -40,14 +45,23 @@ export default function SolvableTask(props) {
     }
 
     const handleCheck = (i) => {
-        checks[i] = !checks[i];
+        const copy = [...checks];
+        copy[i] = !copy[i];
+        setChecks(copy);
     }
 
     return <TaskDiv>
         <h3>{question}</h3>
         <FormGroup>
             {
-                options.map((opt, ind) =>  <FormControlLabel key={ind} control={<Checkbox color="success" onChange={() => handleCheck(ind)}/>} label={opt} style={{float:"left"}}/>                 )
+                options.map((opt, ind) =>
+                    <FormControlLabel key={opt}
+                                      control={
+                                          <Checkbox color="success" onChange={() => handleCheck(ind)}/>
+                                      }
+                                      label={opt}
+                                      style={{float:"left"}}/>
+                )
             }
         </FormGroup>
         <Button variant="contained" color="success" onClick={handleClick} style={{marginTop:"3%"}}>

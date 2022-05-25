@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import {getTasks} from '../Services/TasksService';
 import {formTaskOptions} from '../Components/SolvableTask'
 import NavigationBar from '../Components/NavigationBar';
+import {Button} from "@mui/material";
 
 const difficultyOpts = ["Easy", "Medium", "Hard"]; 
 const topicOpts = ["Biology", "Physics", "Mathematics", "Science", "Programming", "Algorithms", "Chemistry", "Politics"]; //Maciau sitiem enumai yra, dabar neisikeliau ju, paskui i juos pakeisiu
@@ -25,6 +26,7 @@ export default function BrowseTasks(){
     useEffect(() => {
         setPageTasks(getPageTasks(filtered, page, perPage)); //From filtered tasks get section of a page
         setPageAmount(getPageAmount(filtered, perPage)); //Sets page counta
+
     }, [filtered]); //call whenever filtered is changed
 
     const handlePageChange = (event, value) => {
@@ -59,7 +61,7 @@ function getPageTasks(tasks, page, perPage){ //Gives page section from all the t
 
 function getPageAmount(allTasks, perPage){ //Calculates page count
     let amount = Math.floor(allTasks.length/perPage)
-    if (allTasks.length % perPage != 0){
+    if (allTasks.length % perPage !== 0){
         amount = amount+1;
     }
     return amount;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HexClanApplication.Api.Contracts.Models
 {
-    public class Task
+    public class Task_
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

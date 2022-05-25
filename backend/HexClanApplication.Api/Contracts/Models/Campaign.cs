@@ -13,6 +13,6 @@ namespace HexClanApplication.Api.Contracts.Models
         public string Description { get; set; }
         public string[] Topics { get; set; }
         public string[] Tags { get; set; }
-        public List<Task> Tasks { get; set; }
+        public List<Task_> Tasks { get; set; }
     }
 }

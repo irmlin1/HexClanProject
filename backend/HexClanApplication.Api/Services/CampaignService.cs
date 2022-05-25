@@ -9,14 +9,14 @@ namespace HexClanApplication.Api.Services
     public class CampaignService : ICampaignService
     {
         private readonly IMongoCollection<Campaign> _campaignCollection;
-        private readonly IMongoCollection<Contracts.Models.Task> _taskCollection;
+        private readonly IMongoCollection<Contracts.Models.Task_> _taskCollection;
         private readonly IMongoCollection<Answer> _answerCollection;
 
         public CampaignService(IMongoClient client)
         {
             var database = client.GetDatabase("HexClanDatabase");
             _campaignCollection = database.GetCollection<Campaign>("Campaigns");
-            _taskCollection = database.GetCollection<Contracts.Models.Task>("Tasks");
+            _taskCollection = database.GetCollection<Contracts.Models.Task_>("Tasks");
             _answerCollection = database.GetCollection<Answer>("Answers");
         }
 
