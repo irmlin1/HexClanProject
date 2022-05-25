@@ -15,6 +15,7 @@ import BrowseCampaigns from './Pages/BrowseCampaigns';
 import SolveCampaign from './Pages/SolveCampaign';
 import Profile from './Pages/Profile';
 import Rules from './Pages/Rules';
+import Tutorial from './Pages/Tutorial'
 
 import './Styles/index.css';
 import './Styles/colors.css';
@@ -35,6 +36,7 @@ ReactDOM.render(
                         <Route path="users" element={<UserList/>} />
                         <Route path="browsecampaigns" element={<BrowseCampaigns />} />
                         <Route path="solvecampaign" element={<SolveCampaign />} />
+                        <Route path="tutorial" element={<Tutorial />} />
                     </Route>
                     <Route path="/tasks" element={<BrowseTasks />} />
                     <Route path="/" element={<App />} />
