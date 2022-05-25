@@ -10,7 +10,7 @@ import NavigationBar from '../Components/NavigationBar';
 import {Button} from "@mui/material";
 
 const difficultyOpts = ["Easy", "Medium", "Hard"]; 
-const topicOpts = ["Biology", "Physics", "Mathematics", "Science", "Programming", "Algorithms", "Chemistry", "Politics"]; //Maciau sitiem enumai yra, dabar neisikeliau ju, paskui i juos pakeisiu
+const topicOpts = ["Biology", "Physics", "Mathematics", "Science", "Programming", "Algorithms", "Chemistry", "Politics", "Geography"]; //Maciau sitiem enumai yra, dabar neisikeliau ju, paskui i juos pakeisiu
 const perPage = 5;
 
 export default function BrowseTasks(){
