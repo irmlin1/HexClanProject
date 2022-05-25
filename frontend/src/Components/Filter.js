@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Alert, Autocomplete, Button, Snackbar, TextField} from '@mui/material';
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
 import CreateSingleTaskDialog from "./CreateSingleTaskDialog";
 import {addTask} from "../Services/TasksService";
 
-export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter}) {
+export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter, trigger}) {
     const [diffChoices, setDiffChoices] = useState([]);
     const [topicChoices, setTopicChoices] = useState([]);
     const [createTaskOpen, setCreateTaskOpen] = useState(false);
@@ -105,6 +105,10 @@ export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter})
         filterSetter(filtered); // Sets the filtered list for the parent(browseTasks)
     }
 
+    useEffect(() => {
+        handleSearch();
+    },[tasks])
+
     function validate() {
         if (
             !createdTask.question ||
@@ -149,6 +153,7 @@ export default function Filter({difficultyOpts, topicOpts, tasks, filterSetter})
         }
 
         const response = await addTask(createdTask);
+        trigger()
         setSnackOpen(true)
         if(response) {
             if(response.data.Success) {

@@ -19,15 +19,20 @@ export default function BrowseTasks(){
     const [allTasks, setTasks] = useState([]);
     const [filtered, setFiltered] = useState([]);
     const [pageAmount, setPageAmount] = useState(0);
+    const [toggle, setToggle] = useState(false);
 
     useEffect(() => {
         getTasks().then(res => setTasks(res.data)); //Retrieves all tasks from database
-    }, [])
+    }, [toggle])
     useEffect(() => {
         setPageTasks(getPageTasks(filtered, page, perPage)); //From filtered tasks get section of a page
         setPageAmount(getPageAmount(filtered, perPage)); //Sets page counta
 
     }, [filtered]); //call whenever filtered is changed
+
+    const trigger = () => {
+        setToggle(!toggle);
+    }
 
     const handlePageChange = (event, value) => {
         setPage(value);
@@ -41,7 +46,13 @@ export default function BrowseTasks(){
 
     return <div>
     <NavigationBar />
-    <Filter difficultyOpts={difficultyOpts} topicOpts={topicOpts} tasks={allTasks} filterSetter={filterTasks}/>
+    <Filter
+        difficultyOpts={difficultyOpts}
+        topicOpts={topicOpts}
+        tasks={allTasks}
+        filterSetter={filterTasks}
+        trigger={trigger}
+    />
     {
         pageTasks.length > 0 && pageTasks.map((t, ind) => {const {options, correct} = formTaskOptions(t) ;
         return <SolvableTask key={ind} question={t.Question} options={options} correct={correct} />})
