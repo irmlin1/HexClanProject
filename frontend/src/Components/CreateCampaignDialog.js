@@ -216,7 +216,7 @@ export default function CreateCampaignDialog(props) {
                     return {validated: false, message: "Each task should have at least 2 answers!"};
                 if (task.answers.length) {
                     for (const answer of task.answers) {
-                        if (!answer)
+                        if (!answer.content)
                             return {validated: false, message: "Some answers were left empty!"};
                     }
                 }

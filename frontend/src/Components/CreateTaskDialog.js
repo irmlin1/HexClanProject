@@ -34,7 +34,7 @@ export default function CreateTaskDialog(props) {
                             <h4>
                                 Task {i+1}
                             </h4>
-                            <IconButton onClick={() => handleDeleteTask(i)}>
+                            <IconButton onClick={(e) => handleDeleteTask(e, i)}>
                                 <CancelIcon color={"error"}/>
                             </IconButton>
                         </div>
