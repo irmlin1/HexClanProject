@@ -14,7 +14,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import {AuthContext} from "../Contexts/AuthContext";
 import {Roles} from "../Enums/RoleEnums";
 import UserSettingsDialog from "../Components/UserSettingsDialog";
-import UserPopUp from "../Components/UserPopUp";
 
 
 export default function UserList() {
@@ -22,20 +21,12 @@ export default function UserList() {
     const [allUsers, setUsers] = useState([]);
     const [settingsOpen, setSettingsOpen] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
-    const [UserOpen, setUserOpen] = useState(false);
 
     const handleOpen = (user) => {
         setSelectedUser(user)
         setSettingsOpen(true);
     }
     const handleClose = () => setSettingsOpen(false);
-    
-
-    const handleOpen2 = (user) => {
-        setSelectedUser(user)
-        setUserOpen(true);
-    }
-    const handleClose2 = () => setUserOpen(false);
 
     const { userDetails, isAuthenticated } = useContext(AuthContext);
     const isAdmin = userDetails === null ? false : userDetails.roles.includes(Roles.ADMIN);
@@ -97,7 +88,7 @@ export default function UserList() {
                                         {user.UserName}
                                     </StyledTableCell>
                                     <StyledTableCell>
-                                        <IconButton onClick={e => handleOpen2(user)}>
+                                        <IconButton>
                                             <InfoIcon/>
                                         </IconButton>
                                     </StyledTableCell>
@@ -119,12 +110,6 @@ export default function UserList() {
             <UserSettingsDialog
                 dialogOpen={settingsOpen}
                 handleClose={handleClose}
-                user={selectedUser}
-            />
-
-            <UserPopUp
-                dialogOpen={UserOpen}
-                handleClose={handleClose2}
                 user={selectedUser}
             />
         </>
